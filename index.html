@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Chebrolet es un proyecto musical argentino. Hardbass Argentino desde 2021.">
+  <title>CHEBROLET</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <section class="panel panel-1">
+      <h1>CHEBROLET</h1>
+    </section>
+
+    <section class="panel panel-2">
+      <div class="corner">
+        <a href="https://www.youtube.com/watch?v=NSMKazzq5SY" class="c top-left" target="_blank" rel="noopener noreferrer" aria-label="Abrir video 1">
+          <img src="images/2.jpg" alt="2">
+        </a>
+        <a href="https://www.youtube.com/watch?v=t6Iu7wuUtJQ" class="c top-right" target="_blank" rel="noopener noreferrer" aria-label="Abrir video 2">
+          <img src="images/2b.jpg" alt="2b">
+        </a>
+        <a href="https://www.youtube.com/watch?v=i69_GGN1l_4" class="c bottom-left" target="_blank" rel="noopener noreferrer" aria-label="Abrir video 3">
+          <img src="images/2c.jpg" alt="2c">
+        </a>
+        <a href="https://www.youtube.com/watch?v=1ssKgrzi8Sk" class="c bottom-right" target="_blank" rel="noopener noreferrer" aria-label="Abrir video 4">
+          <img src="images/2d.jpg" alt="2d">
+        </a>
+      </div>
+
+      <div id="centerText" class="center-text" role="heading" aria-label="pregunta" data-min="14" data-max="220">
+        ¿QUÉ REMIL PORONGA ES UN LAMBORGHINI?
+      </div>
+    </section>
+
+    <section class="panel panel-3">
+      <h1>SOBRE CHEBROLET</h1>
+      <p class="panel-3-text">En las rurales profundidades de la provincia de Buenos Aires, en
+algún momento de 2021, Chebrolet inventó el Hardbass Argentino
+y lo llevó a lo más alto con hits como “Renault 12“, “La 110“ y “Vendo
+Gol Mod. 1998“. No sabemos si logrará vender algún auto, pero si
+sabemos que chebrolet ha logrado elevar el valor de la cultura popular
+de los argentinos, al mismo tiempo que logra elevar también el valor
+de los vehículos que esos mismos argentinos conducen.</br></br>
+Chebrolet no solo logra hacerse notar en internet a través de su
+viralidad, también ha recorrido el país con sus presentaciones en vivo,
+infiltrando todo tipo de escenas; desde bares de rock hasta boliches
+de cumbia, desde un puesto de choripanes, al Lollapalooza (en la
+misma semana).</p>
+    </section>
+  </div>
+<script>
+(function(){
+  const el = document.getElementById('centerText');
+  if(!el) return;
+  function fit(){
+    const containerPadding = 32; // px, matching max-width calc(100% - 2rem)
+    const available = Math.max(100, window.innerWidth - containerPadding);
+    const min = parseInt(el.dataset.min,10) || 12;
+    const max = parseInt(el.dataset.max,10) || 220;
+    let low = min, high = max, best = min;
+    while (low <= high) {
+      const mid = Math.floor((low + high) / 2);
+      el.style.fontSize = mid + 'px';
+      if (el.scrollWidth <= available) {
+        best = mid;
+        low = mid + 1;
+      } else {
+        high = mid - 1;
+      }
+    }
+    el.style.fontSize = best + 'px';
+  }
+  window.addEventListener('resize', fit);
+  window.addEventListener('orientationchange', fit);
+  document.addEventListener('DOMContentLoaded', fit);
+  if (document.fonts) document.fonts.ready.then(fit).catch(fit);
+  else fit();
+})();
+</script>
+</body>
+</html> 
