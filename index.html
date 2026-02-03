@@ -32,25 +32,16 @@
         </a>
       </div>
 
-      <div id="centerText" class="center-text" role="heading" aria-label="pregunta" data-min="14" data-max="220" data-mobile-max="32">
+      <div id="centerText" class="center-text" role="heading" aria-label="pregunta" data-min="14" data-max="220" data-mobile-max="18">
         ¿QUÉ REMIL PORONGA ES UN LAMBORGHINI?
       </div> 
     </section>
 
     <section class="panel panel-3">
       <h1>SOBRE CHEBROLET</h1>
-      <p class="panel-3-text">En las rurales profundidades de la provincia de Buenos Aires, en
-algún momento de 2021, Chebrolet inventó el Hardbass Argentino
-y lo llevó a lo más alto con hits como “Renault 12“, “La 110“ y “Vendo
-Gol Mod. 1998“. No sabemos si logrará vender algún auto, pero si
-sabemos que chebrolet ha logrado elevar el valor de la cultura popular
-de los argentinos, al mismo tiempo que logra elevar también el valor
-de los vehículos que esos mismos argentinos conducen.</br></br>
-Chebrolet no solo logra hacerse notar en internet a través de su
-viralidad, también ha recorrido el país con sus presentaciones en vivo,
-infiltrando todo tipo de escenas; desde bares de rock hasta boliches
-de cumbia, desde un puesto de choripanes, al Lollapalooza (en la
-misma semana).</p>
+      <p class="panel-3-text">Chebrolet es un artista argentino de música electrónica y cantor que desde 2021 se dedica principalmente a desarrollar el Hardbass Argentino, género del cuál es pionero en idioma español y al que ha llevado a lo más alto con hits como “Renault 12 “, “La 110“ y “Vendo Gol Mod. 1998“
+      </br></br>Chebrolet no solo ha triunfado en el internet sino que también ha recorrido el país con sus presentaciones en vivo, infiltrando todo tipo de escenas; desde bares de rock hasta boliches cumbieros, desde un puesto de choripanes, al Lollapalooza (en la misma semana)
+.</p>
     </section>
   </div>
 <script>
@@ -73,9 +64,13 @@ misma semana).</p>
       const mid = Math.floor((low + high) / 2);
       el.style.fontSize = mid + 'px';
       const fitsWidth = el.scrollWidth <= availableWidth;
-      const fitsHeight = isMobile ? (el.scrollHeight <= availableHeight) : true;
+      const scrollHeight = el.scrollHeight;
+      const computedLineHeight = parseFloat(getComputedStyle(el).lineHeight) || mid * 1.05;
+      const lines = Math.round(scrollHeight / computedLineHeight);
+      const fitsLines = isMobile ? (lines <= 2) : true;
+      const fitsHeight = isMobile ? (scrollHeight <= availableHeight) : true;
 
-      if (fitsWidth && fitsHeight) {
+      if (fitsWidth && fitsHeight && fitsLines) {
         best = mid;
         low = mid + 1;
       } else {
@@ -87,8 +82,8 @@ misma semana).</p>
     if (isMobile) {
       best = Math.min(best, mobileCap);
       el.style.fontSize = best + 'px';
-      // Si sigue excediendo la altura, reducir hasta que quepa
-      while (el.scrollHeight > availableHeight && best > min) {
+      // Si sigue excediendo la altura o el número de líneas (máx 2), reducir hasta que quepa
+      while ((el.scrollHeight > availableHeight || Math.round(el.scrollHeight / (parseFloat(getComputedStyle(el).lineHeight) || best * 1.05)) > 2) && best > min) {
         best--;
         el.style.fontSize = best + 'px';
       }

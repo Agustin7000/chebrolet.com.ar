@@ -10,15 +10,15 @@ body {
 }
 
 .container {
-  height: 100vh;
+  min-height: 100vh;
   overflow-y: auto;
   /* Use proximity so snapping occurs only when the user gets close to a snap point (less aggressive) */
   scroll-snap-type: y proximity;
   -webkit-overflow-scrolling: touch;
-}
+} 
 
 .panel {
-  height: 100vh;
+  min-height: 100vh;
   scroll-snap-align: start;
   display: flex;
   align-items: center;
@@ -26,7 +26,7 @@ body {
   color: #fff;
   text-shadow: 0 1px 3px rgba(0,0,0,0.5);
   padding: 2rem;
-}
+} 
 
 .panel-1 {
   background-image: url('images/1.jpg');
@@ -65,6 +65,49 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+}
+
+/* Responsivos para texto en panel-3 */
+.panel-3 h1 {
+  font-size: clamp(1.5rem, 6.5vw, 2.5rem);
+  margin: 0;
+  line-height: 1.05;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  text-align: center;
+  max-width: 90%;
+  word-break: break-word;
+}
+
+.panel-3-text {
+  font-size: clamp(0.95rem, 2.7vw, 1rem);
+  padding: 1rem 1.25rem;
+  box-sizing: border-box;
+}
+
+/* En pantallas pequeñas y/o con poca altura evitar que el contenido se oculte */
+@media (max-width: 420px) {
+  .panel {
+    padding: 1.25rem;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+  .panel-3 h1 {
+    font-size: clamp(1.25rem, 6vw, 1.8rem);
+  }
+  .panel-3-text {
+    padding: 0.9rem 1rem;
+    font-size: clamp(0.9rem, 2.4vw, 1rem);
+  }
+}
+
+/* Si la altura de la ventana es pequeña, colocar el contenido al inicio para que no se centre y se corte */
+@media (max-height: 640px) {
+  .panel {
+    justify-content: flex-start;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
 }
 
 .panel-3-text {
@@ -153,11 +196,20 @@ body {
 /* En móviles permitir que el texto haga wrap y se parta de forma segura */
 @media (max-width: 420px) {
   .center-text {
+    display: block;
+    /* ocupar casi todo el ancho disponible para reducir saltos de línea */
+    width: calc(100% - 2rem);
+    max-width: calc(100% - 2rem);
     white-space: normal;
     overflow-wrap: break-word;
     word-break: break-word;
-    max-width: calc(100% - 2rem);
-    padding-left: 1rem;
-    padding-right: 1rem;
+    /* un poco más de espacio vertical para evitar que las descenders se corten */
+    padding: 0.45rem 0.6rem;
+    line-height: 1.12;
+    font-weight: 700;
+    word-spacing: 0.02em;
+    /* remove max-height to avoid clipping; JS en forzar el máximo de líneas */
+    max-height: none;
+    overflow: visible;
   }
-}
+} 
