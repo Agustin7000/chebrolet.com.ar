@@ -32,9 +32,9 @@
         </a>
       </div>
 
-      <div id="centerText" class="center-text" role="heading" aria-label="pregunta" data-min="14" data-max="220">
+      <div id="centerText" class="center-text" role="heading" aria-label="pregunta" data-min="14" data-max="220" data-mobile-max="32">
         ¿QUÉ REMIL PORONGA ES UN LAMBORGHINI?
-      </div>
+      </div> 
     </section>
 
     <section class="panel panel-3">
@@ -59,22 +59,44 @@ misma semana).</p>
   if(!el) return;
   function fit(){
     const containerPadding = 32; // px, matching max-width calc(100% - 2rem)
-    const available = Math.max(100, window.innerWidth - containerPadding);
+    const availableWidth = Math.max(100, window.innerWidth - containerPadding);
+    // leave some vertical space so centered overlay doesn't overflow the viewport
+    const availableHeight = Math.max(40, window.innerHeight - 120);
+
     const min = parseInt(el.dataset.min,10) || 12;
     const max = parseInt(el.dataset.max,10) || 220;
     let low = min, high = max, best = min;
+
+    const isMobile = window.matchMedia('(max-width:420px)').matches;
+
     while (low <= high) {
       const mid = Math.floor((low + high) / 2);
       el.style.fontSize = mid + 'px';
-      if (el.scrollWidth <= available) {
+      const fitsWidth = el.scrollWidth <= availableWidth;
+      const fitsHeight = isMobile ? (el.scrollHeight <= availableHeight) : true;
+
+      if (fitsWidth && fitsHeight) {
         best = mid;
         low = mid + 1;
       } else {
         high = mid - 1;
       }
     }
-    el.style.fontSize = best + 'px';
+
+    const mobileCap = parseInt(el.dataset.mobileMax, 10) || 32;
+    if (isMobile) {
+      best = Math.min(best, mobileCap);
+      el.style.fontSize = best + 'px';
+      // Si sigue excediendo la altura, reducir hasta que quepa
+      while (el.scrollHeight > availableHeight && best > min) {
+        best--;
+        el.style.fontSize = best + 'px';
+      }
+    } else {
+      el.style.fontSize = best + 'px';
+    }
   }
+
   window.addEventListener('resize', fit);
   window.addEventListener('orientationchange', fit);
   document.addEventListener('DOMContentLoaded', fit);

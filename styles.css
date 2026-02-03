@@ -5,6 +5,8 @@ body {
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   scroll-behavior: smooth;
+  /* Evita el desplazamiento horizontal en móviles causado por elementos que puedan desbordar ligeramente */
+  overflow-x: hidden;
 }
 
 .container {
@@ -42,11 +44,15 @@ body {
 .panel-1 h1 {
   font-family: 'Lato', sans-serif;
   font-weight: 900;
-  font-size: 100px;
+  /* Tamaño responsivo: mínimo, preferencia relativa (vw) y máximo similar a 100px */
+  font-size: clamp(2.25rem, 6.5vw, 6.25rem);
   line-height: 1;
   margin: 0;
   color: #fff;
   text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  text-align: center;
+  max-width: 90%;
+  word-break: break-word;
 }
 
 .panel-3 {
@@ -138,6 +144,20 @@ body {
   box-shadow: 0 8px 30px rgba(0,0,0,0.6);
   display: inline-block; /* shrink to content width */
   max-width: calc(100% - 2rem); /* avoid overflow on small screens */
-  white-space: nowrap; /* force single line */
-  pointer-events: none; /* allow scrolling through the overlay */
+  white-space: nowrap; /* keep it single-line by default so JS fits to width */
+  overflow-wrap: normal;
+  word-break: normal;
+  pointer-events: none; /* permitir desplazamiento a través del overlay */
+}
+
+/* En móviles permitir que el texto haga wrap y se parta de forma segura */
+@media (max-width: 420px) {
+  .center-text {
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-width: calc(100% - 2rem);
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
