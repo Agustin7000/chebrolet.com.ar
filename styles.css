@@ -30,7 +30,7 @@ body {
 } 
 
 .panel-1 {
-  background-image: url('images/1.png');
+  background-image: url('images/1c.png');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -261,4 +261,5 @@ body {
     overflow: visible;
   }
 } 
+
 
