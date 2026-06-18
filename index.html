@@ -64,6 +64,8 @@
 
   .panel-3 {
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 1.25rem;
   }
 
@@ -84,7 +86,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.35);
   }
 
   .panel-4-inner {
@@ -280,12 +282,13 @@
     letter-spacing: 0.25em;
     text-transform: uppercase;
     color: rgba(255,255,255,0.5);
+    text-align: center;
   }
 
   .panel-3-title {
     font-family: "Times New Roman", Times, serif;
     font-weight: 700;
-    font-size: clamp(3rem, 9vw, 5.5rem);
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
     color: #fff;
     margin: 0;
     line-height: 1;
