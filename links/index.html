@@ -89,7 +89,7 @@
             if (sectionData.type === 'shows') {
               const main = document.createElement('span');
               main.className = 'show-main';
-              main.textContent = `${linkData.city} · ${linkData.date} · ${linkData.venue}`;
+              main.textContent = [linkData.city, linkData.date, linkData.venue].filter(Boolean).join(' · ');
               item.appendChild(main);
               const descriptionText = [linkData.description, comingSoon ? 'ENTRADAS PRÓXIMAMENTE' : null].filter(Boolean).join(' · ');
               if (descriptionText) {
