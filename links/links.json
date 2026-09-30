@@ -61,11 +61,13 @@
       "links": [
         {
           "title": "YouTube",
+          "icon": "youtube",
           "url": "https://youtube.com/@chebrolet",
           "active": true
         },
         {
           "title": "Spotify",
+          "icon": "spotify",
           "url": "https://open.spotify.com/artist/3Hp4sJ7cEU3UnQIeSnx0pj",
           "active": true
         }
