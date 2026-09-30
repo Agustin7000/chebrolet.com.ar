@@ -4,6 +4,32 @@
     "tagline": "HARDBASS ARGENTINO",
     "image": "../images/1b.png"
   },
+  "socials": [
+    {
+      "name": "Instagram",
+      "icon": "instagram",
+      "url": "https://www.instagram.com/akachebrolet",
+      "active": true
+    },
+    {
+      "name": "TikTok",
+      "icon": "tiktok",
+      "url": "https://www.tiktok.com/@akachebrolet",
+      "active": true
+    },
+    {
+      "name": "Facebook",
+      "icon": "facebook",
+      "url": "https://facebook.com/akachebrolet",
+      "active": true
+    },
+    {
+      "name": "X / Twitter",
+      "icon": "x",
+      "url": "https://twitter.com/chebrolet_",
+      "active": true
+    }
+  ],
   "sections": [
     {
       "title": "PRÓXIMOS SHOWS",
@@ -22,12 +48,7 @@
           "title": "Entradas | LA PLATA 5/12 (PuraVida)",
           "url": "https://www.tikzet.com/events/fiesta-bajoduro-la-plata-pura-vida",
           "active": true
-        }
-      ]
-    },
-    {
-      "title": "DESTACADO",
-      "links": [
+        },
         {
           "title": "MARITO BARACUS y NPV FEST: Edición Multiverso con Trukini, Alejo y Valentina y más",
           "url": "https://www.allaccess.com.ar/event/marito-baracus-y-npv-fest-edicin-multiverso-con-trukini-alejo-y-valentina-y-ms",
@@ -46,31 +67,6 @@
         {
           "title": "Spotify",
           "url": "https://open.spotify.com/artist/3Hp4sJ7cEU3UnQIeSnx0pj",
-          "active": true
-        }
-      ]
-    },
-    {
-      "title": "REDES",
-      "links": [
-        {
-          "title": "Instagram",
-          "url": "https://www.instagram.com/akachebrolet",
-          "active": true
-        },
-        {
-          "title": "TikTok",
-          "url": "https://www.tiktok.com/@akachebrolet",
-          "active": true
-        },
-        {
-          "title": "Facebook",
-          "url": "https://facebook.com/akachebrolet",
-          "active": true
-        },
-        {
-          "title": "Twitter",
-          "url": "https://twitter.com/chebrolet_",
           "active": true
         }
       ]
