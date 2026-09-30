@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Abriendo YouTube…</title>
+  <style>html,body{margin:0;min-height:100%;background:#050505;color:#fff;font-family:Arial,Helvetica,sans-serif}body{display:grid;place-items:center}.box{text-align:center;padding:28px}.box p{color:#aaa}.box a{color:#fff}</style>
+</head>
+<body>
+  <div class="box">
+    <strong>Abriendo YouTube…</strong>
+    <p>Si la aplicación no se abre, <a id="fallback" href="#">abrí el video acá</a>.</p>
+  </div>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const id = (params.get('v') || '').replace(/[^a-zA-Z0-9_-]/g, '');
+    const web = `https://www.youtube.com/watch?v=${id}`;
+    const fallback = document.getElementById('fallback');
+    fallback.href = web;
+
+    if (!id) {
+      document.querySelector('strong').textContent = 'Video no encontrado';
+    } else {
+      const ua = navigator.userAgent || '';
+      let timer;
+      const cancelFallback = () => { if (timer) clearTimeout(timer); };
+      document.addEventListener('visibilitychange', () => { if (document.hidden) cancelFallback(); });
+      window.addEventListener('pagehide', cancelFallback);
+
+      if (/Android/i.test(ua)) {
+        const encodedFallback = encodeURIComponent(web);
+        location.href = `intent://www.youtube.com/watch?v=${id}#Intent;scheme=https;package=com.google.android.youtube;S.browser_fallback_url=${encodedFallback};end`;
+      } else if (/iPhone|iPad|iPod/i.test(ua)) {
+        location.href = `youtube://www.youtube.com/watch?v=${id}`;
+        timer = setTimeout(() => { location.href = web; }, 1400);
+      } else {
+        location.replace(web);
+      }
+    }
+  </script>
+</body>
+</html>
