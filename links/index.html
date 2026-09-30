@@ -92,12 +92,6 @@
                 description.textContent = linkData.description;
                 a.appendChild(description);
               }
-              if (linkData.lineup) {
-                const lineup = document.createElement('span');
-                lineup.className = 'show-lineup';
-                lineup.textContent = linkData.lineup;
-                a.appendChild(lineup);
-              }
             } else {
               if (linkData.icon && icons[linkData.icon]) {
                 const icon = document.createElement('span');
