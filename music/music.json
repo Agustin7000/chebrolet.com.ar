@@ -1,0 +1,40 @@
+{
+  "releases": [
+    {
+      "title": "RENAULT 12",
+      "youtubeId": "t9YTiYA06bc",
+      "spotify": "https://open.spotify.com/search/RENAULT%2012%20chebrolet",
+      "active": true
+    },
+    {
+      "title": "CABALLO EN RENAULT 19 (HARD MIX)",
+      "youtubeId": "i69_GGN1l_4",
+      "spotify": "https://open.spotify.com/search/CABALLO%20EN%20RENAULT%2019%20HARD%20MIX%20chebrolet",
+      "active": true
+    },
+    {
+      "title": "VENDO GOL MOD. 1998",
+      "youtubeId": "tbrkobfEj9M",
+      "spotify": "https://open.spotify.com/search/Vendo%20Gol%20Mod.%201998%20chebrolet",
+      "active": true
+    },
+    {
+      "title": "MESI (MESSITEK 2026)",
+      "youtubeId": "rW0DNrK-vP4",
+      "spotify": "https://open.spotify.com/search/mesi%20Messitek%202026%20chebrolet",
+      "active": true
+    },
+    {
+      "title": "KE KALOR",
+      "youtubeId": "CVBBLN3fAfw",
+      "spotify": "https://open.spotify.com/search/KE%20KALOR%20chebrolet%20KD",
+      "active": true
+    },
+    {
+      "title": "VENDO EL DUNA",
+      "youtubeId": "t6Iu7wuUtJQ",
+      "spotify": "https://open.spotify.com/search/VENDO%20EL%20DUNA%20chebrolet",
+      "active": true
+    }
+  ]
+}
