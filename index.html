@@ -62,6 +62,40 @@
     scroll-snap-type: y mandatory;
   }
 
+  .panel-1-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.85rem;
+    margin-top: 0.75rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .panel-1-nav a {
+    color: rgba(255,255,255,0.78);
+    text-decoration: none;
+    padding: 0.65rem 0.9rem;
+    border: 1px solid rgba(255,255,255,0.28);
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .panel-1-nav a:hover {
+      color: #111;
+      background: #fff;
+      border-color: #fff;
+    }
+  }
+
+  .panel-1-nav-separator {
+    color: rgba(255,255,255,0.35);
+  }
+
   .panel-3 {
     flex-direction: column;
     align-items: center;
@@ -330,6 +364,11 @@
   <section class="panel panel-1">
     <img src="images/1b.png" alt="Logo Chebrolet - artista de Hardbass Argentino" class="panel-1-logo" />
     <h1>CHEBROLET</h1>
+    <nav class="panel-1-nav" aria-label="Accesos principales">
+      <a href="/links/">Próximos shows</a>
+      <span class="panel-1-nav-separator" aria-hidden="true">·</span>
+      <a href="/music/">Música</a>
+    </nav>
   </section>
 
   <section class="panel panel-2">
