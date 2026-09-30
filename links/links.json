@@ -52,6 +52,14 @@
           "active": true
         },
         {
+          "city": "NEUQUÉN",
+          "date": "13/11",
+          "venue": "ICONO CLUB",
+          "description": "Fiesta Bajoduro",
+          "status": "coming_soon",
+          "active": true
+        },
+        {
           "city": "LA PLATA",
           "date": "5/12",
           "venue": "PURA VIDA",
