@@ -1,0 +1,39 @@
+{
+  "profile": {
+    "name": "CHEBROLET",
+    "tagline": "HARDBASS ARGENTINO",
+    "image": "../images/1b.png"
+  },
+  "sections": [
+    {
+      "title": "MÚSICA",
+      "links": [
+        {
+          "title": "Spotify",
+          "url": "https://open.spotify.com/artist/3Hp4sJ7cEU3UnQIeSnx0pj",
+          "active": true
+        },
+        {
+          "title": "YouTube",
+          "url": "https://youtube.com/@chebrolet",
+          "active": true
+        }
+      ]
+    },
+    {
+      "title": "REDES",
+      "links": [
+        {
+          "title": "Instagram",
+          "url": "https://www.instagram.com/akachebrolet",
+          "active": true
+        },
+        {
+          "title": "TikTok",
+          "url": "https://www.tiktok.com/@akachebrolet",
+          "active": true
+        }
+      ]
+    }
+  ]
+}

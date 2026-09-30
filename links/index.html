@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Links | CHEBROLET</title>
+  <meta name="robots" content="noindex,follow">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <header class="profile" id="profile"></header>
+    <div id="sections"></div>
+    <p class="status" id="status">Cargando…</p>
+  </main>
+
+  <script>
+    async function loadLinks() {
+      const status = document.getElementById('status');
+      try {
+        const response = await fetch('./links.json', { cache: 'no-store' });
+        if (!response.ok) throw new Error('No se pudo cargar links.json');
+        const data = await response.json();
+
+        const profile = document.getElementById('profile');
+        if (data.profile.image) {
+          const img = document.createElement('img');
+          img.src = data.profile.image;
+          img.alt = `Logo de ${data.profile.name}`;
+          profile.appendChild(img);
+        }
+        const h1 = document.createElement('h1');
+        h1.textContent = data.profile.name;
+        profile.appendChild(h1);
+        if (data.profile.tagline) {
+          const p = document.createElement('p');
+          p.textContent = data.profile.tagline;
+          profile.appendChild(p);
+        }
+
+        const sections = document.getElementById('sections');
+        data.sections.forEach(sectionData => {
+          const activeLinks = (sectionData.links || []).filter(link => link.active !== false);
+          if (!activeLinks.length) return;
+
+          const section = document.createElement('section');
+          section.className = 'section';
+          const title = document.createElement('h2');
+          title.className = 'section-title';
+          title.textContent = sectionData.title;
+          section.appendChild(title);
+
+          const list = document.createElement('div');
+          list.className = 'links';
+          activeLinks.forEach(linkData => {
+            const a = document.createElement('a');
+            a.className = 'link';
+            a.href = linkData.url;
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            a.textContent = linkData.title;
+            list.appendChild(a);
+          });
+          section.appendChild(list);
+          sections.appendChild(section);
+        });
+        status.remove();
+      } catch (error) {
+        status.textContent = 'No se pudieron cargar los links.';
+        console.error(error);
+      }
+    }
+    loadLinks();
+  </script>
+</body>
+</html>
