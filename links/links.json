@@ -6,16 +6,46 @@
   },
   "sections": [
     {
-      "title": "MÚSICA",
+      "title": "PRÓXIMOS SHOWS",
       "links": [
         {
-          "title": "Spotify",
-          "url": "https://open.spotify.com/artist/3Hp4sJ7cEU3UnQIeSnx0pj",
+          "title": "Entradas | CÓRDOBA 23/10",
+          "url": "https://www.tikzet.com/events/fiesta-bajoduro-cordoba",
           "active": true
         },
         {
+          "title": "Entradas | CABA 7/11 (Otra historia)",
+          "url": "https://otrahistoria.com.ar/evento/fiesta-bajoduro-2/",
+          "active": true
+        },
+        {
+          "title": "Entradas | LA PLATA 5/12 (PuraVida)",
+          "url": "https://www.tikzet.com/events/fiesta-bajoduro-la-plata-pura-vida",
+          "active": true
+        }
+      ]
+    },
+    {
+      "title": "DESTACADO",
+      "links": [
+        {
+          "title": "MARITO BARACUS y NPV FEST: Edición Multiverso con Trukini, Alejo y Valentina y más",
+          "url": "https://www.allaccess.com.ar/event/marito-baracus-y-npv-fest-edicin-multiverso-con-trukini-alejo-y-valentina-y-ms",
+          "active": true
+        }
+      ]
+    },
+    {
+      "title": "MÚSICA",
+      "links": [
+        {
           "title": "YouTube",
           "url": "https://youtube.com/@chebrolet",
+          "active": true
+        },
+        {
+          "title": "Spotify",
+          "url": "https://open.spotify.com/artist/3Hp4sJ7cEU3UnQIeSnx0pj",
           "active": true
         }
       ]
@@ -31,6 +61,16 @@
         {
           "title": "TikTok",
           "url": "https://www.tiktok.com/@akachebrolet",
+          "active": true
+        },
+        {
+          "title": "Facebook",
+          "url": "https://facebook.com/akachebrolet",
+          "active": true
+        },
+        {
+          "title": "Twitter",
+          "url": "https://twitter.com/chebrolet_",
           "active": true
         }
       ]
