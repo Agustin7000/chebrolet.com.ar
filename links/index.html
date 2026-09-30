@@ -73,22 +73,37 @@
           section.appendChild(title);
           const list = document.createElement('div');
           list.className = 'links';
+
           activeLinks.forEach(linkData => {
             const a = document.createElement('a');
-            a.className = 'link';
+            a.className = sectionData.type === 'shows' ? 'link show-link' : 'link';
             a.href = linkData.url;
             a.target = '_blank';
             a.rel = 'noopener noreferrer';
-            if (linkData.icon && icons[linkData.icon]) {
-              const icon = document.createElement('span');
-              icon.className = 'link-icon';
-              icon.innerHTML = icons[linkData.icon];
-              a.appendChild(icon);
+
+            if (sectionData.type === 'shows') {
+              const main = document.createElement('span');
+              main.className = 'show-main';
+              main.textContent = `${linkData.city} · ${linkData.date} · ${linkData.venue}`;
+              a.appendChild(main);
+              if (linkData.description) {
+                const description = document.createElement('span');
+                description.className = 'show-description';
+                description.textContent = linkData.description;
+                a.appendChild(description);
+              }
+            } else {
+              if (linkData.icon && icons[linkData.icon]) {
+                const icon = document.createElement('span');
+                icon.className = 'link-icon';
+                icon.innerHTML = icons[linkData.icon];
+                a.appendChild(icon);
+              }
+              const label = document.createElement('span');
+              label.className = 'link-label';
+              label.textContent = linkData.title;
+              a.appendChild(label);
             }
-            const label = document.createElement('span');
-            label.className = 'link-label';
-            label.textContent = linkData.title;
-            a.appendChild(label);
             list.appendChild(a);
           });
           section.appendChild(list);
