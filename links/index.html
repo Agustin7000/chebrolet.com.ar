@@ -75,36 +75,42 @@
           list.className = 'links';
 
           activeLinks.forEach(linkData => {
-            const a = document.createElement('a');
-            a.className = sectionData.type === 'shows' ? 'link show-link' : 'link';
-            a.href = linkData.url;
-            a.target = '_blank';
-            a.rel = 'noopener noreferrer';
+            const comingSoon = sectionData.type === 'shows' && linkData.status === 'coming_soon';
+            const item = document.createElement(comingSoon ? 'div' : 'a');
+            item.className = sectionData.type === 'shows' ? `link show-link${comingSoon ? ' coming-soon' : ''}` : 'link';
+            if (!comingSoon) {
+              item.href = linkData.url;
+              item.target = '_blank';
+              item.rel = 'noopener noreferrer';
+            } else {
+              item.setAttribute('aria-disabled', 'true');
+            }
 
             if (sectionData.type === 'shows') {
               const main = document.createElement('span');
               main.className = 'show-main';
               main.textContent = `${linkData.city} · ${linkData.date} · ${linkData.venue}`;
-              a.appendChild(main);
-              if (linkData.description) {
+              item.appendChild(main);
+              const descriptionText = [linkData.description, comingSoon ? 'ENTRADAS PRÓXIMAMENTE' : null].filter(Boolean).join(' · ');
+              if (descriptionText) {
                 const description = document.createElement('span');
                 description.className = 'show-description';
-                description.textContent = linkData.description;
-                a.appendChild(description);
+                description.textContent = descriptionText;
+                item.appendChild(description);
               }
             } else {
               if (linkData.icon && icons[linkData.icon]) {
                 const icon = document.createElement('span');
                 icon.className = 'link-icon';
                 icon.innerHTML = icons[linkData.icon];
-                a.appendChild(icon);
+                item.appendChild(icon);
               }
               const label = document.createElement('span');
               label.className = 'link-label';
               label.textContent = linkData.title;
-              a.appendChild(label);
+              item.appendChild(label);
             }
-            list.appendChild(a);
+            list.appendChild(item);
           });
           section.appendChild(list);
           sections.appendChild(section);
