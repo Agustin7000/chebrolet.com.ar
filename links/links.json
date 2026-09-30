@@ -52,10 +52,10 @@
           "active": true
         },
         {
-          "city": "NEUQUÉN",
+          "city": "CIPOLLETTI",
           "date": "13/11",
           "venue": "ICONO CLUB",
-          "description": "Fiesta Bajoduro",
+          "description": "CHEBROLET · ASCOH · LULO N1GH7X · DJ SORPRENDENTE",
           "status": "coming_soon",
           "active": true
         },
@@ -65,6 +65,14 @@
           "venue": "PURA VIDA",
           "description": "Fiesta Bajoduro (CHEBROLET · DJ HIJADEPUTA · DJ SORPRENDENTE)",
           "url": "https://www.tikzet.com/events/fiesta-bajoduro-la-plata-pura-vida",
+          "active": true
+        },
+        {
+          "city": "AYACUCHO",
+          "date": "19/12",
+          "venue": "JUVENTUD UNIDA",
+          "description": "Fiesta Bajoduro (lineup a confirmar)",
+          "url": "https://www.tikzet.com/events/fiesta-bajoduro-ayacucho",
           "active": true
         },
         {
