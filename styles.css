@@ -44,7 +44,7 @@ body {
 
 .panel-1 h1 {
   position: absolute;
-  bottom: 6vh;
+  bottom: 10vh;
   left: 50%;
   transform: translateX(-50%);
   margin: 0;
@@ -71,11 +71,11 @@ body {
   filter: drop-shadow(0 8px 20px rgba(0,0,0,0.6));
 }
 
-/* Main navigation: keep it visibly above the CHEBROLET title. */
+/* Main navigation below the CHEBROLET title. */
 .panel-1-nav {
   position: absolute;
   left: 50%;
-  bottom: 16vh;
+  bottom: 3vh;
   transform: translateX(-50%);
   z-index: 20;
   margin-top: 0 !important;
@@ -91,7 +91,7 @@ body {
 
   .panel-1 h1 {
     font-size: clamp(2.2rem, 7vw, 3.2rem);
-    bottom: 4vh;
+    bottom: 10vh;
     max-width: 85%;
     white-space: nowrap;
     overflow: hidden;
@@ -104,7 +104,7 @@ body {
   }
 
   .panel-1-nav {
-    bottom: 12vh;
+    bottom: 3vh;
     width: calc(100% - 2rem);
     gap: 0.45rem !important;
     font-size: 10px !important;
