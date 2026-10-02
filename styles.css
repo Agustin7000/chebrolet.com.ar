@@ -5,7 +5,6 @@ body {
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   scroll-behavior: smooth;
-  /* Evita el desplazamiento horizontal en móviles causado por elementos que puedan desbordar ligeramente */
   overflow-x: hidden;
   overflow-y: hidden;
 }
@@ -13,10 +12,9 @@ body {
 .container {
   height: 100vh;
   overflow-y: auto;
-  /* Use proximity so snapping occurs only when the user gets close to a snap point (less aggressive) */
   scroll-snap-type: y proximity;
   -webkit-overflow-scrolling: touch;
-} 
+}
 
 .panel {
   min-height: 100vh;
@@ -27,7 +25,7 @@ body {
   color: #fff;
   text-shadow: 0 1px 3px rgba(0,0,0,0.5);
   padding: 2rem;
-} 
+}
 
 .panel-1 {
   background-image: url('images/1c.png');
@@ -73,7 +71,17 @@ body {
   filter: drop-shadow(0 8px 20px rgba(0,0,0,0.6));
 }
 
-/* Ajustes para móviles */
+/* Main navigation: keep it visibly above the CHEBROLET title. */
+.panel-1-nav {
+  position: absolute;
+  left: 50%;
+  bottom: 16vh;
+  transform: translateX(-50%);
+  z-index: 20;
+  margin-top: 0 !important;
+  white-space: nowrap;
+}
+
 @media (max-width: 420px) {
   .panel-1 {
     padding: 1.5rem;
@@ -94,6 +102,17 @@ body {
     max-width: 65%;
     margin: 0 auto;
   }
+
+  .panel-1-nav {
+    bottom: 12vh;
+    width: calc(100% - 2rem);
+    gap: 0.45rem !important;
+    font-size: 10px !important;
+  }
+
+  .panel-1-nav a {
+    padding: 0.6rem 0.7rem !important;
+  }
 }
 
 .panel-3 {
@@ -102,13 +121,11 @@ body {
   background-position: center;
   padding: 3rem;
   text-align: center;
-  /* layout: stack title above paragraph */
   flex-direction: column;
   align-items: center;
   gap: 1rem;
 }
 
-/* Responsivos para texto en panel-3 */
 .panel-3 h1 {
   font-size: clamp(1.5rem, 6.5vw, 2.5rem);
   margin: 0;
@@ -126,7 +143,6 @@ body {
   box-sizing: border-box;
 }
 
-/* En pantallas pequeñas y/o con poca altura evitar que el contenido se oculte */
 @media (max-width: 420px) {
   .panel {
     padding: 1.25rem;
@@ -149,7 +165,6 @@ body {
   }
 }
 
-/* Si la altura de la ventana es pequeña, colocar el contenido al inicio para que no se centre y se corte */
 @media (max-height: 640px) {
   .panel {
     justify-content: flex-start;
@@ -175,20 +190,19 @@ body {
   overflow: hidden;
   padding: 0;
   height: 100vh;
-  color: transparent; /* hide any text */
-  background-color: #000; /* fallback while images load */
+  color: transparent;
+  background-color: #000;
 }
 
 .corner {
   position: absolute;
-  inset: 0; /* top:0; right:0; bottom:0; left:0; */
-  pointer-events: none; /* let clickable children opt-in */
+  inset: 0;
+  pointer-events: none;
 }
 
 .corner .c {
   position: absolute;
   z-index: 0;
-  /* make each link cover half the viewport with a tiny overlap to avoid 1px seam due to subpixel rounding */
   width: calc(50% + 1px);
   height: calc(50% + 1px);
   display: block;
@@ -200,7 +214,7 @@ body {
   backface-visibility: hidden;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
-  pointer-events: auto; /* make anchors clickable */
+  pointer-events: auto;
   cursor: pointer;
 }
 
@@ -222,44 +236,38 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background: #000; /* solid black background as requested */
+  background: #000;
   color: #fff;
   font-family: "Times New Roman", Times, serif;
   font-weight: 700;
   text-align: center;
   padding: 0.5rem 0.9rem;
-  font-size: 2rem; /* initial fallback, will be overridden by JS */
+  font-size: 2rem;
   line-height: 1.05;
   letter-spacing: 0.02em;
   border-radius: 4px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.6);
-  display: inline-block; /* shrink to content width */
-  max-width: calc(100% - 2rem); /* avoid overflow on small screens */
-  white-space: nowrap; /* keep it single-line by default so JS fits to width */
+  display: inline-block;
+  max-width: calc(100% - 2rem);
+  white-space: nowrap;
   overflow-wrap: normal;
   word-break: normal;
-  pointer-events: none; /* permitir desplazamiento a través del overlay */
+  pointer-events: none;
 }
 
-/* En móviles permitir que el texto haga wrap y se parta de forma segura */
 @media (max-width: 420px) {
   .center-text {
     display: block;
-    /* ocupar casi todo el ancho disponible para reducir saltos de línea */
     width: calc(100% - 2rem);
     max-width: calc(100% - 2rem);
     white-space: normal;
     overflow-wrap: break-word;
     word-break: break-word;
-    /* un poco más de espacio vertical para evitar que las descenders se corten */
     padding: 0.45rem 0.6rem;
     line-height: 1.12;
     font-weight: 700;
     word-spacing: 0.02em;
-    /* remove max-height to avoid clipping; JS en forzar el máximo de líneas */
     max-height: none;
     overflow: visible;
   }
-} 
-
-
+}
