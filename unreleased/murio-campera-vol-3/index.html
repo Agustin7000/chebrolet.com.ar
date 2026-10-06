@@ -13,7 +13,7 @@
 <main class="wrap">
 <div class="top"><div class="brand">CHEBROLET / UNRELEASED</div><div class="private">PRIVATE LINK</div></div>
 <section class="hero">
-<img class="cover" src="https://drive.google.com/thumbnail?id=1L3hLGuQf24KGSrigPXuh6kE88E3vkW5X&sz=w1200" alt="Cover Murió Campera Vol. 3">
+<img class="cover" src="assets/Murio%20Campera%20Vol.%203%20-%20Cover.jpg" alt="Cover Murió Campera Vol. 3">
 <div><div class="eyebrow">Unreleased · 5 tracks</div><h1 class="title">Murió Campera<br>Vol. 3</h1><div class="artist">Chebrolet</div></div>
 </section>
 <div class="tracks" id="tracks"></div>
@@ -25,12 +25,12 @@
 <audio id="audio" preload="metadata"></audio>
 <script>
 const songs=[
- {name:'Karma',id:'14DJqLYQ9aSZcqiIByKgOHwiOh8cuuQtv'},
- {name:'Que explote el parlante',id:'1aH76s3yXfwYLRXo53tRwfgvzUkpG4L6U'},
- {name:'Te traje flores',id:'1CRTck_F7tt_oTi53G2u9vFrpERgFmm8M'},
- {name:'Las guachas',id:'1VLe1x8ojhbKYbJxZ_KemJe1VL1zaK38x'},
- {name:'Fiesta Reggaeton',id:'19aHcx755q2I3FL7h-219C0NOBFdmL17I'}
-].map(s=>({...s,src:`https://drive.google.com/uc?export=download&id=${s.id}`}));
+ {name:'Karma',src:'assets/Muri%C3%B3%20Campera%20Vol.%203%20-%20Karma.mp3'},
+ {name:'Que explote el parlante',src:'assets/Muri%C3%B3%20Campera%20Vol.%203%20-%20Que%20explote%20el%20parlante.mp3'},
+ {name:'Te traje flores',src:'assets/Muri%C3%B3%20Campera%20Vol.%203%20-%20Te%20traje%20flores.mp3'},
+ {name:'Las guachas',src:'assets/Muri%C3%B3%20Campera%20Vol.%203%20-%20Las%20guachas.mp3'},
+ {name:'Fiesta Reggaeton',src:'assets/Muri%C3%B3%20Campera%20Vol.%203%20-%20Fiesta%20Reggaeton.mp3'}
+];
 const audio=document.querySelector('#audio'),tracks=document.querySelector('#tracks'),play=document.querySelector('#play'),now=document.querySelector('#now'),fill=document.querySelector('#fill'),progress=document.querySelector('#progress'),current=document.querySelector('#current'),total=document.querySelector('#total');let active=-1;
 const fmt=s=>!isFinite(s)?'0:00':`${Math.floor(s/60)}:${String(Math.floor(s%60)).padStart(2,'0')}`;
 songs.forEach((s,i)=>{const el=document.createElement('div');el.className='track';el.innerHTML=`<div class="num">${String(i+1).padStart(2,'0')}</div><div><div class="name">${s.name}</div><div class="sub">Chebrolet</div></div><div class="dur" id="d${i}">—:—</div>`;el.onclick=()=>load(i,true);tracks.appendChild(el)});
