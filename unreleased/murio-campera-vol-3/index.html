@@ -25,11 +25,11 @@
 <audio id="audio" preload="metadata"></audio>
 <script>
 const songs=[
- {name:'Karma',src:'assets/Muri%C3%B3%20Campera%20Vol.%203%20-%20Karma.mp3'},
- {name:'Que explote el parlante',src:'assets/Muri%C3%B3%20Campera%20Vol.%203%20-%20Que%20explote%20el%20parlante.mp3'},
- {name:'Te traje flores',src:'assets/Muri%C3%B3%20Campera%20Vol.%203%20-%20Te%20traje%20flores.mp3'},
+ {name:'Fiesta Reggaeton',src:'assets/Muri%C3%B3%20Campera%20Vol.%203%20-%20Fiesta%20Reggaeton.mp3'},
  {name:'Las guachas',src:'assets/Muri%C3%B3%20Campera%20Vol.%203%20-%20Las%20guachas.mp3'},
- {name:'Fiesta Reggaeton',src:'assets/Muri%C3%B3%20Campera%20Vol.%203%20-%20Fiesta%20Reggaeton.mp3'}
+ {name:'Te traje flores',src:'assets/Muri%C3%B3%20Campera%20Vol.%203%20-%20Te%20traje%20flores.mp3'},
+ {name:'Que explote el parlante',src:'assets/Muri%C3%B3%20Campera%20Vol.%203%20-%20Que%20explote%20el%20parlante.mp3'},
+ {name:'Karma',src:'assets/Muri%C3%B3%20Campera%20Vol.%203%20-%20Karma.mp3'}
 ];
 const audio=document.querySelector('#audio'),tracks=document.querySelector('#tracks'),play=document.querySelector('#play'),now=document.querySelector('#now'),fill=document.querySelector('#fill'),progress=document.querySelector('#progress'),current=document.querySelector('#current'),total=document.querySelector('#total');let active=-1;
 const fmt=s=>!isFinite(s)?'0:00':`${Math.floor(s/60)}:${String(Math.floor(s%60)).padStart(2,'0')}`;
