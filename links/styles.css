@@ -4,7 +4,7 @@
 /* Jerarquía visual de los desplegables de Links */
 .accordion-toggle{background:#101010;border-color:#484848}
 .accordion-toggle[aria-expanded="true"]{border-color:#666}
-.accordion-panel{margin:8px 0 0 14px;padding:0 0 0 15px;border-left:1px solid #444}
+.accordion-panel{margin:8px 0 0;padding:0;border-left:0}
 .accordion-panel .links,.accordion-panel .music-releases{display:block}
 .accordion-panel .show-link{min-height:64px;margin:0;padding:14px 8px;border:0;border-bottom:1px solid #292929;background:transparent}
 .accordion-panel .music-release{min-height:64px;margin:0;padding:11px 4px 11px 9px;border:0;border-bottom:1px solid #292929}
@@ -18,7 +18,7 @@
   .accordion-panel .music-platform:hover{background:#252525;color:#fff}
 }
 @media(max-width:480px){
-  .accordion-panel{margin-left:10px;padding-left:10px}
+  .accordion-panel{margin-left:0;padding-left:0}
   .accordion-panel .show-link{padding:12px 5px}
   .accordion-panel .music-release{padding:9px 0 9px 6px;gap:8px}
 }
