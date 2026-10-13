@@ -6,6 +6,7 @@
   <title>Shows | CHEBROLET</title>
   <meta name="robots" content="noindex,follow">
   <link rel="stylesheet" href="../links/styles.css">
+<style>.profile-home{display:inline-block;line-height:0;border-radius:4px}.profile-home:focus-visible{outline:2px solid #fff;outline-offset:4px}</style>
 </head>
 <body>
   <main class="page">
@@ -31,7 +32,7 @@
     function renderProfile(data) {
       const profile = document.getElementById('profile');
       if (data.profile.image) {
-        const img = document.createElement('img'); img.src = data.profile.image; img.alt = `Logo de ${data.profile.name}`; profile.appendChild(img);
+        const img = document.createElement('img'); img.src = data.profile.image; img.alt = `Logo de ${data.profile.name}`; const home = document.createElement('a'); home.href = '/'; home.className = 'profile-home'; home.setAttribute('aria-label', 'Volver al inicio'); home.appendChild(img); profile.appendChild(home);
       }
       const h1 = document.createElement('h1'); h1.textContent = data.profile.name; profile.appendChild(h1);
       if (data.profile.tagline) { const p = document.createElement('p'); p.textContent = data.profile.tagline; profile.appendChild(p); }
