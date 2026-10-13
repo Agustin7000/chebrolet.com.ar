@@ -55,7 +55,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="/styles.css">
 
 <style>
   .container {
@@ -105,7 +105,7 @@
 
   /* Panel 4 - Contacto */
   .panel-4 {
-    background-image: url('images/4.jpg');
+    background-image: url('/images/4.jpg');
     background-size: cover;
     background-position: center;
     flex-direction: column;
@@ -356,16 +356,104 @@
   }
 
 
+
+/* Isolated visual preview: main2 only. */
+body { background:#0b0b0b; }
+.container { scroll-snap-type:y proximity; }
+.panel { min-height:100svh; text-shadow:none; }
+.panel-1 { min-height:100svh; max-height:none; gap:24px; }
+.panel-1 .panel-1-logo { position:static; transform:none; max-width:none; width:clamp(210px,29vw,390px); }
+.panel-1 h1 { position:static; transform:none; max-width:100%; font-size:clamp(42px,6vw,82px); }
+.panel-1-nav { position:static; transform:none; width:auto; gap:14px; font-size:12px; }
+.panel-1-nav a { color:#fff; padding:15px 23px; border-color:#ffffff70; }
+.panel-1-nav a:first-child { background:#ea0000; border-color:#ea0000; }
+.panel-1-nav-separator { display:none; }
+.panel-1-nav a:hover { background:#fff; border-color:#fff; color:#111; }
+.center-text { font-family:'Lato',Arial,sans-serif; font-weight:900; border-radius:0; letter-spacing:-.025em; padding:14px 22px; }
+.panel-3 { position:relative; background-image:linear-gradient(90deg,transparent 25%,rgba(11,11,11,.30) 40%,rgba(11,11,11,.95) 60%,#0b0b0b 85%),url('/images/3.png'); background-position:center; padding:80px clamp(30px,6vw,110px); align-items:flex-end; justify-content:center; max-height:none; overflow:visible; }
+.bio-content { width:46%; max-width:560px; display:flex; flex-direction:column; align-items:flex-start; gap:25px; }
+.panel-3-eyebrow { color:#ffffffa6; text-align:left; font-size:10px; letter-spacing:.2em; }
+.panel-3-title { font-family:'Lato',Arial,sans-serif !important; font-size:clamp(36px,4.5vw,66px) !important; text-align:left !important; letter-spacing:-.02em !important; text-shadow:none !important; max-width:100%; }
+.panel-3-divider { width:48px; background:#ea0000; height:3px; }
+.panel-3-text { text-align:left !important; color:#e0e0e0; font-size:17px; line-height:1.8; max-width:100%; margin:0; }
+.panel-4 { background-image:linear-gradient(90deg,#0b0b0b 0%,rgba(11,11,11,.94) 40%,rgba(11,11,11,.25) 100%),url('/images/4.jpg'); padding:80px clamp(30px,6vw,110px); align-items:flex-start; }
+.panel-4::before { background:none; }
+.panel-4-inner { max-width:560px; align-items:flex-start; gap:28px; }
+.panel-4-title { font-family:'Lato',Arial,sans-serif; font-size:clamp(38px,4.5vw,66px); letter-spacing:-.02em; text-align:left; }
+.panel-4-eyebrow { color:#ffffffa6; font-size:10px; }
+.panel-4-form input,.panel-4-form textarea { font-family:system-ui,sans-serif; font-weight:400; background:#111111a6; border:1px solid #ffffff26; padding:14px 16px; font-size:16px; }
+.panel-4-form input::placeholder,.panel-4-form textarea::placeholder { color:#b8b8b8; font-size:11px; }
+.panel-4-form input:focus,.panel-4-form textarea:focus { border-color:#ea0000; }
+.panel-4-submit { background:#ea0000; border-color:#ea0000; }
+.panel-4-gmail,.panel-4-socials-grid a { color:#d6d6d6; }
+.panel-4-socials { align-items:flex-start; }
+.panel-4-socials-grid { justify-content:flex-start; gap:10px; }
+.panel-4-socials-grid a { font-size:11px; letter-spacing:.08em; padding:10px 12px; }
+a:focus-visible,button:focus-visible { outline:2px solid #fff; outline-offset:5px; }
+@media(max-width:760px) {
+  .panel-1 { justify-content:center; align-items:center; padding:28px 20px; gap:23px; }
+  .panel-1 .panel-1-logo { width:min(68vw,290px); }
+  .panel-1 h1 { font-size:clamp(36px,10vw,62px); white-space:nowrap; overflow:visible; }
+  .panel-1-nav { justify-content:center; font-size:10px !important; gap:12px !important; }
+  .panel-1-nav a { padding:13px 17px !important; }
+  .panel-3 { background:#0b0b0b; padding:0; display:block; }
+  .panel-3::before { content:''; display:block; height:52svh; min-height:300px; background-image:linear-gradient(0deg,#0b0b0b,transparent 35%),url('/images/3.png'); background-size:cover; background-position:30% center; }
+  .bio-content { width:100%; max-width:620px; margin:auto; padding:24px 25px 60px; gap:22px; }
+  .panel-3-title { font-size:40px !important; }
+  .panel-3-text { font-size:16px; line-height:1.75; }
+  .panel-4 { padding:60px 25px; background-image:linear-gradient(rgba(11,11,11,.90),rgba(11,11,11,.97)),url('/images/4.jpg'); align-items:center; }
+  .panel-4-inner { max-width:570px; }
+  .panel-4-gmail { font-size:12px; letter-spacing:.03em; }
+  .panel-4-socials-grid { gap:8px; }
+  .panel-4-socials-grid a { padding:9px 10px; }
+}
+@media(prefers-reduced-motion:reduce) { * { scroll-behavior:auto !important; transition:none !important; } }
+
+
+/* Review adjustments: solid music button, original slogan type, full-panel snapping. */
+.container { height:100svh; scroll-snap-type:y mandatory; }
+.panel { scroll-snap-align:start; scroll-snap-stop:always; min-height:100svh; }
+.panel-2 { height:100svh; }
+.panel-1-nav a:last-child { background:#454545; border-color:#737373; color:#fff; }
+.panel-1-nav a:last-child:hover { background:#626262; border-color:#999; }
+.center-text { font-family:"Times New Roman",Times,serif; font-weight:700; letter-spacing:.02em; font-size:clamp(14px,3.5vw,74px); line-height:1.05; padding:.5rem .9rem; width:max-content; max-width:calc(100% - 2rem); white-space:nowrap; overflow-wrap:normal; word-break:normal; }
+@media(max-width:760px) {
+  .panel-3 { height:100svh; min-height:100svh; display:grid; grid-template-rows:minmax(0,1fr) auto; overflow:visible; }
+  .panel-3::before { height:100%; min-height:0; background-position:30% 40%; }
+  .bio-content { padding:16px 23px 22px; gap:12px; max-width:620px; }
+  .panel-3-eyebrow { font-size:9px; letter-spacing:.17em; }
+  .panel-3-title { font-size:32px !important; }
+  .panel-3-divider { height:2px; width:36px; }
+  .panel-3-text { font-size:14px; line-height:1.5; margin:0; }
+  .center-text { width:calc(100% - 2rem); white-space:normal; font-size:clamp(18px,5.2vw,30px); line-height:1.12; padding:10px 12px; }
+  .panel-4 { padding:22px 23px; justify-content:center; }
+  .panel-4-inner { gap:14px; }
+  .panel-4-title { font-size:36px; }
+  .panel-4-form { gap:10px; }
+  .panel-4-form input,.panel-4-form textarea { padding:10px 12px; }
+  .panel-4-form textarea { min-height:72px; }
+  .panel-4-submit { padding:11px 22px; }
+  .panel-4-socials { gap:7px; }
+  .panel-4-gmail-row { margin-bottom:0; }
+  .panel-4-socials-grid { display:grid; grid-template-columns:repeat(2,1fr); }
+  .panel-4-socials-grid a { font-size:10px; padding:7px 9px; }
+}
+/* Small landscape windows retain readable content and can scroll inside a section. */
+@media(max-width:760px) and (max-height:540px) {
+  .panel-3,.panel-4 { height:auto; min-height:100svh; }
+  .panel-3::before { height:100px; }
+}
+
 </style>
 </head>
 <body>
 
 <div class="container">
   <section class="panel panel-1">
-    <img src="images/1b.png" alt="Logo Chebrolet - artista de Hardbass Argentino" class="panel-1-logo" />
+    <img src="/images/1b.png" alt="Logo Chebrolet - artista de Hardbass Argentino" class="panel-1-logo" />
     <h1>CHEBROLET</h1>
     <nav class="panel-1-nav" aria-label="Accesos principales">
-      <a href="/links/">Próximos shows</a>
+      <a href="/shows/">Próximos shows</a>
       <span class="panel-1-nav-separator" aria-hidden="true">·</span>
       <a href="/music/">Música</a>
     </nav>
@@ -374,16 +462,16 @@
   <section class="panel panel-2">
     <div class="corner">
       <a href="https://www.youtube.com/watch?v=NSMKazzq5SY" class="c top-left" target="_blank" rel="noopener noreferrer" aria-label="Ver Renault 12 en YouTube">
-        <img src="images/2.jpg" alt="Chebrolet - Renault 12">
+        <img src="/images/2.jpg" alt="Chebrolet - Renault 12">
       </a>
       <a href="https://www.youtube.com/watch?v=t6Iu7wuUtJQ" class="c top-right" target="_blank" rel="noopener noreferrer" aria-label="Ver La 110 en YouTube">
-        <img src="images/2b.jpg" alt="Chebrolet - La 110">
+        <img src="/images/2b.jpg" alt="Chebrolet - La 110">
       </a>
       <a href="https://www.youtube.com/watch?v=i69_GGN1l_4" class="c bottom-left" target="_blank" rel="noopener noreferrer" aria-label="Ver Vendo Gol Mod. 1998 en YouTube">
-        <img src="images/2c.jpg" alt="Chebrolet - Vendo Gol Mod. 1998">
+        <img src="/images/2c.jpg" alt="Chebrolet - Vendo Gol Mod. 1998">
       </a>
       <a href="https://www.youtube.com/watch?v=1ssKgrzi8Sk" class="c bottom-right" target="_blank" rel="noopener noreferrer" aria-label="Ver video en YouTube">
-        <img src="images/2d.jpg" alt="Chebrolet - video">
+        <img src="/images/2d.jpg" alt="Chebrolet - video">
       </a>
     </div>
     <div id="centerText" class="center-text" role="heading" aria-label="pregunta" data-min="14" data-max="220" data-mobile-max="18">
@@ -392,11 +480,13 @@
   </section>
 
   <section class="panel panel-3">
+    <div class="bio-content">
     <span class="panel-3-eyebrow">Hardbass Argentino desde 2021</span>
     <h1 class="panel-3-title">CHEBROLET</h1>
     <div class="panel-3-divider"></div>
     <p class="panel-3-text">Chebrolet es un artista argentino de música electrónica y cantor, pionero del Hardbass Argentino, género que desde 2021 ha llevado a lo más alto con hits como <strong>“Renault 12”</strong>, <strong>“Caballo en Renault 19”</strong> y <strong>“Vendo Gol Mod. 1998”</strong>.</p>
     <p class="panel-3-text">Chebrolet no solo ha triunfado en el internet sino que también ha recorrido el país con sus presentaciones en vivo, infiltrando todo tipo de escenas; desde bares de rock hasta boliches cumbieros y una vez tocó en un puesto de choripanes y en el Lollapalooza en la misma semana.</p>
+    </div>
   </section>
 
   <section class="panel panel-4">
@@ -450,46 +540,6 @@
   const el = document.getElementById('centerText');
   if(!el) return;
 
-  function fit(){
-    const containerPadding = 32;
-    const availableWidth = Math.max(100, window.innerWidth - containerPadding);
-    const availableHeight = Math.max(40, window.innerHeight - 120);
-    const min = parseInt(el.dataset.min,10) || 12;
-    const max = parseInt(el.dataset.max,10) || 220;
-    let low = min, high = max, best = min;
-    const isMobile = window.matchMedia('(max-width:420px)').matches;
-
-    while (low <= high) {
-      const mid = Math.floor((low + high) / 2);
-      el.style.fontSize = mid + 'px';
-      const fitsWidth = el.scrollWidth <= availableWidth;
-      const scrollHeight = el.scrollHeight;
-      const computedLineHeight = parseFloat(getComputedStyle(el).lineHeight) || mid * 1.05;
-      const lines = Math.round(scrollHeight / computedLineHeight);
-      const fitsLines = isMobile ? (lines <= 2) : true;
-      const fitsHeight = isMobile ? (scrollHeight <= availableHeight) : true;
-
-      if (fitsWidth && fitsHeight && fitsLines) {
-        best = mid;
-        low = mid + 1;
-      } else {
-        high = mid - 1;
-      }
-    }
-
-    const mobileCap = parseInt(el.dataset.mobileMax, 10) || 32;
-    if (isMobile) {
-      best = Math.min(best, mobileCap);
-      el.style.fontSize = best + 'px';
-      while ((el.scrollHeight > availableHeight || Math.round(el.scrollHeight / (parseFloat(getComputedStyle(el).lineHeight) || best * 1.05)) > 2) && best > min) {
-        best--;
-        el.style.fontSize = best + 'px';
-      }
-    } else {
-      el.style.fontSize = best + 'px';
-    }
-  }
-
   const form = document.getElementById('contactForm');
   if (form) {
     form.addEventListener('submit', async function(e) {
@@ -517,10 +567,7 @@
     });
   }
 
-  window.addEventListener('orientationchange', fit);
-  document.addEventListener('DOMContentLoaded', fit);
-  if (document.fonts) document.fonts.ready.then(fit).catch(fit);
-  else fit();
+
 })();
 </script>
 </body>
