@@ -409,6 +409,41 @@ a:focus-visible,button:focus-visible { outline:2px solid #fff; outline-offset:5p
 }
 @media(prefers-reduced-motion:reduce) { * { scroll-behavior:auto !important; transition:none !important; } }
 
+
+/* Review adjustments: solid music button, original slogan type, full-panel snapping. */
+.container { height:100svh; scroll-snap-type:y mandatory; }
+.panel { scroll-snap-align:start; scroll-snap-stop:always; min-height:100svh; }
+.panel-2 { height:100svh; }
+.panel-1-nav a:last-child { background:#454545; border-color:#737373; color:#fff; }
+.panel-1-nav a:last-child:hover { background:#626262; border-color:#999; }
+.center-text { font-family:"Times New Roman",Times,serif; font-weight:700; letter-spacing:.02em; font-size:clamp(14px,3.7vw,74px); line-height:1.05; padding:.5rem .9rem; max-width:calc(100% - 2rem); white-space:normal; overflow-wrap:normal; word-break:normal; }
+@media(max-width:760px) {
+  .panel-3 { height:100svh; min-height:100svh; display:grid; grid-template-rows:minmax(0,1fr) auto; overflow:visible; }
+  .panel-3::before { height:100%; min-height:0; background-position:30% 40%; }
+  .bio-content { padding:16px 23px 22px; gap:12px; max-width:620px; }
+  .panel-3-eyebrow { font-size:9px; letter-spacing:.17em; }
+  .panel-3-title { font-size:32px !important; }
+  .panel-3-divider { height:2px; width:36px; }
+  .panel-3-text { font-size:14px; line-height:1.5; margin:0; }
+  .center-text { width:calc(100% - 2rem); font-size:clamp(18px,5.2vw,30px); line-height:1.12; padding:10px 12px; }
+  .panel-4 { padding:22px 23px; justify-content:center; }
+  .panel-4-inner { gap:14px; }
+  .panel-4-title { font-size:36px; }
+  .panel-4-form { gap:10px; }
+  .panel-4-form input,.panel-4-form textarea { padding:10px 12px; }
+  .panel-4-form textarea { min-height:72px; }
+  .panel-4-submit { padding:11px 22px; }
+  .panel-4-socials { gap:7px; }
+  .panel-4-gmail-row { margin-bottom:0; }
+  .panel-4-socials-grid { display:grid; grid-template-columns:repeat(2,1fr); }
+  .panel-4-socials-grid a { font-size:10px; padding:7px 9px; }
+}
+/* Small landscape windows retain readable content and can scroll inside a section. */
+@media(max-width:760px) and (max-height:540px) {
+  .panel-3,.panel-4 { height:auto; min-height:100svh; }
+  .panel-3::before { height:100px; }
+}
+
 </style>
 </head>
 <body>
@@ -505,46 +540,6 @@ a:focus-visible,button:focus-visible { outline:2px solid #fff; outline-offset:5p
   const el = document.getElementById('centerText');
   if(!el) return;
 
-  function fit(){
-    const containerPadding = 32;
-    const availableWidth = Math.max(100, window.innerWidth - containerPadding);
-    const availableHeight = Math.max(40, window.innerHeight - 120);
-    const min = parseInt(el.dataset.min,10) || 12;
-    const max = parseInt(el.dataset.max,10) || 220;
-    let low = min, high = max, best = min;
-    const isMobile = window.matchMedia('(max-width:420px)').matches;
-
-    while (low <= high) {
-      const mid = Math.floor((low + high) / 2);
-      el.style.fontSize = mid + 'px';
-      const fitsWidth = el.scrollWidth <= availableWidth;
-      const scrollHeight = el.scrollHeight;
-      const computedLineHeight = parseFloat(getComputedStyle(el).lineHeight) || mid * 1.05;
-      const lines = Math.round(scrollHeight / computedLineHeight);
-      const fitsLines = isMobile ? (lines <= 2) : true;
-      const fitsHeight = isMobile ? (scrollHeight <= availableHeight) : true;
-
-      if (fitsWidth && fitsHeight && fitsLines) {
-        best = mid;
-        low = mid + 1;
-      } else {
-        high = mid - 1;
-      }
-    }
-
-    const mobileCap = parseInt(el.dataset.mobileMax, 10) || 32;
-    if (isMobile) {
-      best = Math.min(best, mobileCap);
-      el.style.fontSize = best + 'px';
-      while ((el.scrollHeight > availableHeight || Math.round(el.scrollHeight / (parseFloat(getComputedStyle(el).lineHeight) || best * 1.05)) > 2) && best > min) {
-        best--;
-        el.style.fontSize = best + 'px';
-      }
-    } else {
-      el.style.fontSize = best + 'px';
-    }
-  }
-
   const form = document.getElementById('contactForm');
   if (form) {
     form.addEventListener('submit', async function(e) {
@@ -572,10 +567,7 @@ a:focus-visible,button:focus-visible { outline:2px solid #fff; outline-offset:5p
     });
   }
 
-  window.addEventListener('orientationchange', fit);
-  document.addEventListener('DOMContentLoaded', fit);
-  if (document.fonts) document.fonts.ready.then(fit).catch(fit);
-  else fit();
+
 })();
 </script>
 </body>
