@@ -18,6 +18,7 @@
         {
           "city": "CABA",
           "date": "16/10",
+          "eventDate": "2026-10-16",
           "description": "Nite-lite Club",
           "url": "https://www.passline.com/eventos/nitelite-club-nitro",
           "active": true
@@ -25,6 +26,7 @@
         {
           "city": "CÓRDOBA",
           "date": "23/10",
+          "eventDate": "2026-10-23",
           "venue": "ALMA DE DIAMANTE",
           "description": "Fiesta Bajoduro: CHEBROLET · CUFAXX aka DJ WARNING · DJ SORPRENDENTE",
           "url": "https://www.tikzet.com/events/fiesta-bajoduro-cordoba",
@@ -33,6 +35,7 @@
         {
           "city": "CABA",
           "date": "7/11",
+          "eventDate": "2026-11-07",
           "venue": "CC OTRA HISTORIA",
           "description": "Fiesta Bajoduro: CHEBROLET · DJ HIJADEPUTA · DJ SORPRENDENTE",
           "url": "https://otrahistoria.com.ar/evento/fiesta-bajoduro-2/",
@@ -41,6 +44,7 @@
         {
           "city": "NEUQUÉN (CIPOLLETTI)",
           "date": "13/11",
+          "eventDate": "2026-11-13",
           "venue": "ICONO CLUB",
           "description": "CHEBROLET · ASCOH · LULO N1GH7X · DJ SORPRENDENTE",
           "url": "https://alpogo.com/evento/chebrolet-en-icono-club-29325",
@@ -49,6 +53,7 @@
         {
           "city": "LA PLATA",
           "date": "5/12",
+          "eventDate": "2026-12-05",
           "venue": "PURA VIDA",
           "description": "Fiesta Bajoduro: CHEBROLET · DJ HIJADEPUTA · DJ SORPRENDENTE",
           "url": "https://www.tikzet.com/events/fiesta-bajoduro-la-plata-pura-vida",
@@ -57,6 +62,7 @@
         {
           "city": "AYACUCHO",
           "date": "19/12",
+          "eventDate": "2026-12-19",
           "venue": "JUVENTUD UNIDA",
           "description": "Fiesta Bajoduro",
           "url": "https://www.tikzet.com/events/fiesta-bajoduro-ayacucho",
@@ -65,6 +71,7 @@
         {
           "city": "CABA",
           "date": "26/12",
+          "eventDate": "2026-12-26",
           "venue": "TEATRO VORTERIX",
           "description": "Marito Baracus y NPV Fest: Edición Multiverso con Trukini, Alejo y Valentina y más",
           "url": "https://www.allaccess.com.ar/event/marito-baracus-y-npv-fest-edicin-multiverso-con-trukini-alejo-y-valentina-y-ms",
