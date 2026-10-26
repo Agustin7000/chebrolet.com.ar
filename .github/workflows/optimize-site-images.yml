@@ -1,0 +1,68 @@
+name: Optimize website photos
+
+on:
+  push:
+    paths:
+      - '.github/workflows/optimize-site-images.yml'
+      - 'images/1c.png'
+      - 'images/3.png'
+      - 'images/4.jpg'
+      - 'images/2.jpg'
+      - 'images/2b.jpg'
+      - 'images/2c.jpg'
+      - 'images/2d.jpg'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  compress:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Pillow
+        run: python -m pip install --quiet pillow
+      - name: Generate optimized WebP assets
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image, ImageOps
+          import io
+          
+          originals = [
+              ('images/1c.png', 'images/1c.webp', 2048, 82),
+              ('images/1c.png', 'images/1c-mobile.webp', 960, 80),
+              ('images/3.png', 'images/3.webp', 2048, 82),
+              ('images/3.png', 'images/3-mobile.webp', 960, 80),
+              ('images/4.jpg', 'images/4.webp', 2048, 82),
+              ('images/4.jpg', 'images/4-mobile.webp', 960, 80),
+              ('images/2.jpg', 'images/2.webp', 1000, 80),
+              ('images/2b.jpg', 'images/2b.webp', 1000, 80),
+              ('images/2c.jpg', 'images/2c.webp', 1000, 80),
+              ('images/2d.jpg', 'images/2d.webp', 1000, 80),
+          ]
+          for source, output, max_width, quality in originals:
+              source_path, output_path = Path(source), Path(output)
+              with Image.open(source_path) as image:
+                  image = ImageOps.exif_transpose(image)
+                  if image.mode not in ('RGB', 'RGBA'):
+                      image = image.convert('RGBA' if 'A' in image.getbands() else 'RGB')
+                  if image.width > max_width:
+                      target_height = round(image.height * (max_width / image.width))
+                      image = image.resize((max_width, target_height), Image.Resampling.LANCZOS)
+                  image.save(output_path, 'WEBP', quality=quality, method=6)
+              print(f'{source}: {source_path.stat().st_size:,} B -> {output}: {output_path.stat().st_size:,} B')
+          PY
+      - name: Commit optimized assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add images/*.webp
+          if ! git diff --cached --quiet; then
+            git commit -m "Optimize site photography into WebP assets"
+            git push
+          fi
