@@ -28,7 +28,7 @@ body {
 }
 
 .panel-1 {
-  background-image: url('images/1c.png');
+  background-image: url('/images/1c.webp');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -116,7 +116,7 @@ body {
 }
 
 .panel-3 {
-  background-image: url('images/3.png');
+  background-image: url('/images/3.webp');
   background-size: cover;
   background-position: center;
   padding: 3rem;
