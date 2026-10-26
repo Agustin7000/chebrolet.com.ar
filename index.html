@@ -449,6 +449,60 @@ a:focus-visible,button:focus-visible { outline:2px solid #fff; outline-offset:5p
   .panel-3::before { height:100px; }
 }
 
+/* Home: two primary links and one full-width shop link. */
+.panel-1-nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 12px;
+  width: min(440px, calc(100% - 36px));
+  max-width: 100%;
+  white-space: normal;
+}
+.panel-1-nav a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 48px;
+  padding: 13px 12px;
+  text-align: center;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+.panel-1-nav a:nth-of-type(2) {
+  background: #454545;
+  border-color: #737373;
+  color: #fff;
+}
+.panel-1-nav a:nth-of-type(2):hover {
+  background: #626262;
+  border-color: #999;
+}
+.panel-1-nav a.nav-shop {
+  grid-column: 1 / -1;
+  background: rgba(16,16,16,.88);
+  border-color: rgba(255,255,255,.52);
+  color: #fff;
+}
+@media(hover:hover) and (pointer:fine) {
+  .panel-1-nav a.nav-shop:hover {
+    background: #fff;
+    border-color: #fff;
+    color: #111;
+  }
+}
+@media(max-width:760px) {
+  .panel-1-nav {
+    width: min(400px, calc(100% - 20px));
+    gap: 9px !important;
+  }
+  .panel-1-nav a {
+    min-height: 44px;
+    padding: 12px 8px !important;
+    font-size: clamp(9px, 2.5vw, 11px);
+    letter-spacing: .11em;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -461,6 +515,7 @@ a:focus-visible,button:focus-visible { outline:2px solid #fff; outline-offset:5p
       <a href="/shows/">Próximos shows</a>
       <span class="panel-1-nav-separator" aria-hidden="true">·</span>
       <a href="/music/">Música</a>
+      <a href="/shop/" class="nav-shop">Tienda</a>
     </nav>
   </section>
 
