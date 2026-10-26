@@ -55,7 +55,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css">
+<!-- Load the visible hero photo before CSS; use the right file for each screen size. -->
+<link rel="preload" as="image" href="/images/1c-mobile.webp" media="(max-width: 760px)" fetchpriority="high">
+<link rel="preload" as="image" href="/images/1c.webp" media="(min-width: 761px)" fetchpriority="high">
+<link rel="stylesheet" href="/styles.css?v=20261026-webp-1">
 
 <style>
   .container {
