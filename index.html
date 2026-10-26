@@ -105,7 +105,7 @@
 
   /* Panel 4 - Contacto */
   .panel-4 {
-    background-image: url('/images/4.jpg');
+    background-image: url('/images/4.webp');
     background-size: cover;
     background-position: center;
     flex-direction: column;
@@ -370,13 +370,13 @@ body { background:#0b0b0b; }
 .panel-1-nav-separator { display:none; }
 .panel-1-nav a:hover { background:#fff; border-color:#fff; color:#111; }
 .center-text { font-family:'Lato',Arial,sans-serif; font-weight:900; border-radius:0; letter-spacing:-.025em; padding:14px 22px; }
-.panel-3 { position:relative; background-image:linear-gradient(90deg,transparent 25%,rgba(11,11,11,.30) 40%,rgba(11,11,11,.95) 60%,#0b0b0b 85%),url('/images/3.png'); background-position:center; padding:80px clamp(30px,6vw,110px); align-items:flex-end; justify-content:center; max-height:none; overflow:visible; }
+.panel-3 { position:relative; background-image:linear-gradient(90deg,transparent 25%,rgba(11,11,11,.30) 40%,rgba(11,11,11,.95) 60%,#0b0b0b 85%),url('/images/3.webp'); background-position:center; padding:80px clamp(30px,6vw,110px); align-items:flex-end; justify-content:center; max-height:none; overflow:visible; }
 .bio-content { width:46%; max-width:560px; display:flex; flex-direction:column; align-items:flex-start; gap:25px; }
 .panel-3-eyebrow { color:#ffffffa6; text-align:left; font-size:10px; letter-spacing:.2em; }
 .panel-3-title { font-family:'Lato',Arial,sans-serif !important; font-size:clamp(36px,4.5vw,66px) !important; text-align:left !important; letter-spacing:-.02em !important; text-shadow:none !important; max-width:100%; }
 .panel-3-divider { width:48px; background:#ea0000; height:3px; }
 .panel-3-text { text-align:left !important; color:#e0e0e0; font-size:17px; line-height:1.8; max-width:100%; margin:0; }
-.panel-4 { background-image:linear-gradient(90deg,#0b0b0b 0%,rgba(11,11,11,.94) 40%,rgba(11,11,11,.25) 100%),url('/images/4.jpg'); padding:80px clamp(30px,6vw,110px); align-items:flex-start; }
+.panel-4 { background-image:linear-gradient(90deg,#0b0b0b 0%,rgba(11,11,11,.94) 40%,rgba(11,11,11,.25) 100%),url('/images/4.webp'); padding:80px clamp(30px,6vw,110px); align-items:flex-start; }
 .panel-4::before { background:none; }
 .panel-4-inner { max-width:560px; align-items:flex-start; gap:28px; }
 .panel-4-title { font-family:'Lato',Arial,sans-serif; font-size:clamp(38px,4.5vw,66px); letter-spacing:-.02em; text-align:left; }
@@ -397,16 +397,18 @@ a:focus-visible,button:focus-visible { outline:2px solid #fff; outline-offset:5p
   .panel-1-nav { justify-content:center; font-size:10px !important; gap:12px !important; }
   .panel-1-nav a { padding:13px 17px !important; }
   .panel-3 { background:#0b0b0b; padding:0; display:block; }
-  .panel-3::before { content:''; display:block; height:52svh; min-height:300px; background-image:linear-gradient(0deg,#0b0b0b,transparent 35%),url('/images/3.png'); background-size:cover; background-position:30% center; }
+  .panel-3::before { content:''; display:block; height:52svh; min-height:300px; background-image:linear-gradient(0deg,#0b0b0b,transparent 35%),url('/images/3-mobile.webp'); background-size:cover; background-position:30% center; }
   .bio-content { width:100%; max-width:620px; margin:auto; padding:24px 25px 60px; gap:22px; }
   .panel-3-title { font-size:40px !important; }
   .panel-3-text { font-size:16px; line-height:1.75; }
-  .panel-4 { padding:60px 25px; background-image:linear-gradient(rgba(11,11,11,.90),rgba(11,11,11,.97)),url('/images/4.jpg'); align-items:center; }
+  .panel-4 { padding:60px 25px; background-image:linear-gradient(rgba(11,11,11,.90),rgba(11,11,11,.97)),url('/images/4-mobile.webp'); align-items:center; }
   .panel-4-inner { max-width:570px; }
   .panel-4-gmail { font-size:12px; letter-spacing:.03em; }
   .panel-4-socials-grid { gap:8px; }
   .panel-4-socials-grid a { padding:9px 10px; }
 }
+/* Lightweight mobile hero background. The original artwork stays untouched. */
+@media(max-width:760px) { .panel-1 { background-image:url('/images/1c-mobile.webp'); } }
 @media(prefers-reduced-motion:reduce) { * { scroll-behavior:auto !important; transition:none !important; } }
 
 
@@ -462,16 +464,16 @@ a:focus-visible,button:focus-visible { outline:2px solid #fff; outline-offset:5p
   <section class="panel panel-2">
     <div class="corner">
       <a href="https://www.youtube.com/watch?v=NSMKazzq5SY" class="c top-left" target="_blank" rel="noopener noreferrer" aria-label="Ver Renault 12 en YouTube">
-        <img src="/images/2.jpg" alt="Chebrolet - Renault 12">
+        <img src="/images/2.webp" loading="lazy" decoding="async" alt="Chebrolet - Renault 12">
       </a>
       <a href="https://www.youtube.com/watch?v=t6Iu7wuUtJQ" class="c top-right" target="_blank" rel="noopener noreferrer" aria-label="Ver La 110 en YouTube">
-        <img src="/images/2b.jpg" alt="Chebrolet - La 110">
+        <img src="/images/2b.webp" loading="lazy" decoding="async" alt="Chebrolet - La 110">
       </a>
       <a href="https://www.youtube.com/watch?v=i69_GGN1l_4" class="c bottom-left" target="_blank" rel="noopener noreferrer" aria-label="Ver Vendo Gol Mod. 1998 en YouTube">
-        <img src="/images/2c.jpg" alt="Chebrolet - Vendo Gol Mod. 1998">
+        <img src="/images/2c.webp" loading="lazy" decoding="async" alt="Chebrolet - Vendo Gol Mod. 1998">
       </a>
       <a href="https://www.youtube.com/watch?v=1ssKgrzi8Sk" class="c bottom-right" target="_blank" rel="noopener noreferrer" aria-label="Ver video en YouTube">
-        <img src="/images/2d.jpg" alt="Chebrolet - video">
+        <img src="/images/2d.webp" loading="lazy" decoding="async" alt="Chebrolet - video">
       </a>
     </div>
     <div id="centerText" class="center-text" role="heading" aria-label="pregunta" data-min="14" data-max="220" data-mobile-max="18">
