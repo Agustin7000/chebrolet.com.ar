@@ -56,470 +56,33 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
 <!-- Load the visible hero photo before CSS; use the right file for each screen size. -->
-<link rel="preload" as="image" href="/images/1c-mobile.webp" media="(max-width: 760px)" fetchpriority="high">
-<link rel="preload" as="image" href="/images/1c.webp" media="(min-width: 761px)" fetchpriority="high">
-<link rel="stylesheet" href="/styles.css?v=20261026-webp-1">
-
-<style>
-  .container {
-    scroll-snap-type: y mandatory;
-  }
-
-  .panel-1-nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.85rem;
-    margin-top: 0.75rem;
-    font-family: 'Lato', sans-serif;
-    font-weight: 900;
-    font-size: 11px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-  }
-
-  .panel-1-nav a {
-    color: rgba(255,255,255,0.78);
-    text-decoration: none;
-    padding: 0.65rem 0.9rem;
-    border: 1px solid rgba(255,255,255,0.28);
-    transition: color 0.2s, border-color 0.2s, background 0.2s;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  @media (hover: hover) and (pointer: fine) {
-    .panel-1-nav a:hover {
-      color: #111;
-      background: #fff;
-      border-color: #fff;
-    }
-  }
-
-  .panel-1-nav-separator {
-    color: rgba(255,255,255,0.35);
-  }
-
-  .panel-3 {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1.25rem;
-  }
-
-  /* Panel 4 - Contacto */
-  .panel-4 {
-    background-image: url('/images/4.webp');
-    background-size: cover;
-    background-position: center;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    padding: 4rem 2rem 3rem;
-    position: relative;
-  }
-
-  .panel-4::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.35);
-  }
-
-  .panel-4-inner {
-    position: relative;
-    z-index: 1;
-    max-width: 600px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-  }
-
-  .panel-4-eyebrow {
-    font-family: 'Lato', sans-serif;
-    font-weight: 900;
-    font-size: 11px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.4);
-  }
-
-  .panel-4-title {
-    font-family: "Times New Roman", Times, serif;
-    font-weight: 700;
-    font-size: clamp(2.5rem, 7vw, 4.5rem);
-    color: #fff;
-    margin: 0;
-    line-height: 1;
-    text-align: center;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
-
-  .panel-4-form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-  }
-
-  .panel-4-form input,
-  .panel-4-form textarea {
-    width: 100%;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid rgba(255,255,255,0.25);
-    color: #fff;
-    font-family: 'Lato', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 400;
-    padding: 0.6rem 0;
-    outline: none;
-    transition: border-color 0.2s;
-    box-sizing: border-box;
-    border-radius: 0;
-    -webkit-appearance: none;
-  }
-
-  .panel-4-form input::placeholder,
-  .panel-4-form textarea::placeholder {
-    color: rgba(255,255,255,0.35);
-    font-family: 'Lato', sans-serif;
-    font-size: 0.75rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    font-weight: 900;
-  }
-
-  .panel-4-form input:focus,
-  .panel-4-form textarea:focus {
-    border-bottom-color: rgba(255,255,255,0.8);
-  }
-
-  .panel-4-form textarea {
-    resize: none;
-    min-height: 100px;
-  }
-
-  .panel-4-submit {
-    align-self: flex-start;
-    background: transparent;
-    border: 1px solid rgba(255,255,255,0.5);
-    color: #fff;
-    font-family: 'Lato', sans-serif;
-    font-weight: 900;
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    padding: 0.75rem 2rem;
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s;
-  }
-
-  .panel-4-submit:hover {
-    background: #fff;
-    color: #111;
-  }
-
-  .panel-4-divider {
-    width: 40px;
-    height: 1px;
-    background: rgba(255,255,255,0.2);
-  }
-
-  .panel-4-socials {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-    width: 100%;
-  }
-
-  .panel-4-gmail-row {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .panel-4-gmail-row svg {
-    width: 18px;
-    height: 18px;
-    fill: rgba(255,255,255,0.6);
-    flex-shrink: 0;
-  }
-
-  .panel-4-gmail {
-    font-family: 'Lato', sans-serif;
-    font-size: 13px;
-    font-weight: 900;
-    letter-spacing: 0.1em;
-    text-transform: lowercase;
-    color: rgba(255,255,255,0.6);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .panel-4-gmail:hover { color: #fff; }
-
-  .panel-4-socials-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem 1.25rem;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .panel-4-socials-grid a {
-    color: rgba(255,255,255,0.6);
-    text-decoration: none;
-    font-family: 'Lato', sans-serif;
-    font-weight: 900;
-    font-size: 13px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    transition: color 0.2s;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    border: 1px solid rgba(255,255,255,0.15);
-    transition: color 0.2s, border-color 0.2s;
-  }
-
-  .panel-4-socials-grid a:hover {
-    color: #fff;
-    border-color: rgba(255,255,255,0.5);
-  }
-
-  .panel-4-socials-grid svg {
-    width: 20px;
-    height: 20px;
-    fill: currentColor;
-    flex-shrink: 0;
-  }
-
-  .panel-4-success {
-    display: none;
-    font-family: 'Lato', sans-serif;
-    font-weight: 900;
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.6);
-    text-align: center;
-  }
-
-  .panel-3-eyebrow {
-    font-family: 'Lato', sans-serif;
-    font-weight: 900;
-    font-size: 11px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
-    text-align: center;
-  }
-
-  .panel-3-title {
-    font-family: "Times New Roman", Times, serif !important;
-    font-weight: 700 !important;
-    font-size: clamp(2.5rem, 7vw, 4.5rem) !important;
-    color: #fff !important;
-    margin: 0 !important;
-    line-height: 1 !important;
-    text-align: center !important;
-    letter-spacing: 0.04em !important;
-    text-transform: uppercase !important;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.5) !important;
-  }
-
-  .panel-3-divider {
-    width: 40px;
-    height: 2px;
-    background: rgba(255,255,255,0.35);
-  }
-
-  .panel-3-text {
-    background: none !important;
-    border-radius: 0 !important;
-    text-align: center !important;
-    max-width: 580px;
-    color: rgba(255,255,255,0.85);
-    font-size: clamp(0.95rem, 2.5vw, 1rem);
-    line-height: 1.75;
-    margin: 0;
-    padding: 0 !important;
-  }
-
-  .panel-3-text strong {
-    color: #fff;
-    font-style: normal;
-  }
 
 
-
-/* Isolated visual preview: main2 only. */
-body { background:#0b0b0b; }
-.container { scroll-snap-type:y proximity; }
-.panel { min-height:100svh; text-shadow:none; }
-.panel-1 { min-height:100svh; max-height:none; gap:24px; }
-.panel-1 .panel-1-logo { position:static; transform:none; max-width:none; width:clamp(210px,29vw,390px); }
-.panel-1 h1 { position:static; transform:none; max-width:100%; font-size:clamp(42px,6vw,82px); }
-.panel-1-nav { position:static; transform:none; width:auto; gap:14px; font-size:12px; }
-.panel-1-nav a { color:#fff; padding:15px 23px; border-color:#ffffff70; }
-.panel-1-nav a:first-child { background:#ea0000; border-color:#ea0000; }
-.panel-1-nav-separator { display:none; }
-.panel-1-nav a:hover { background:#fff; border-color:#fff; color:#111; }
-.center-text { font-family:'Lato',Arial,sans-serif; font-weight:900; border-radius:0; letter-spacing:-.025em; padding:14px 22px; }
-.panel-3 { position:relative; background-image:linear-gradient(90deg,transparent 25%,rgba(11,11,11,.30) 40%,rgba(11,11,11,.95) 60%,#0b0b0b 85%),url('/images/3.webp'); background-position:center; padding:80px clamp(30px,6vw,110px); align-items:flex-end; justify-content:center; max-height:none; overflow:visible; }
-.bio-content { width:46%; max-width:560px; display:flex; flex-direction:column; align-items:flex-start; gap:25px; }
-.panel-3-eyebrow { color:#ffffffa6; text-align:left; font-size:10px; letter-spacing:.2em; }
-.panel-3-title { font-family:'Lato',Arial,sans-serif !important; font-size:clamp(36px,4.5vw,66px) !important; text-align:left !important; letter-spacing:-.02em !important; text-shadow:none !important; max-width:100%; }
-.panel-3-divider { width:48px; background:#ea0000; height:3px; }
-.panel-3-text { text-align:left !important; color:#e0e0e0; font-size:17px; line-height:1.8; max-width:100%; margin:0; }
-.panel-4 { background-image:linear-gradient(90deg,#0b0b0b 0%,rgba(11,11,11,.94) 40%,rgba(11,11,11,.25) 100%),url('/images/4.webp'); padding:80px clamp(30px,6vw,110px); align-items:flex-start; }
-.panel-4::before { background:none; }
-.panel-4-inner { max-width:560px; align-items:flex-start; gap:28px; }
-.panel-4-title { font-family:'Lato',Arial,sans-serif; font-size:clamp(38px,4.5vw,66px); letter-spacing:-.02em; text-align:left; }
-.panel-4-eyebrow { color:#ffffffa6; font-size:10px; }
-.panel-4-form input,.panel-4-form textarea { font-family:system-ui,sans-serif; font-weight:400; background:#111111a6; border:1px solid #ffffff26; padding:14px 16px; font-size:16px; }
-.panel-4-form input::placeholder,.panel-4-form textarea::placeholder { color:#b8b8b8; font-size:11px; }
-.panel-4-form input:focus,.panel-4-form textarea:focus { border-color:#ea0000; }
-.panel-4-submit { background:#ea0000; border-color:#ea0000; }
-.panel-4-gmail,.panel-4-socials-grid a { color:#d6d6d6; }
-.panel-4-socials { align-items:flex-start; }
-.panel-4-socials-grid { justify-content:flex-start; gap:10px; }
-.panel-4-socials-grid a { font-size:11px; letter-spacing:.08em; padding:10px 12px; }
-a:focus-visible,button:focus-visible { outline:2px solid #fff; outline-offset:5px; }
-@media(max-width:760px) {
-  .panel-1 { justify-content:center; align-items:center; padding:28px 20px; gap:23px; }
-  .panel-1 .panel-1-logo { width:min(68vw,290px); }
-  .panel-1 h1 { font-size:clamp(36px,10vw,62px); white-space:nowrap; overflow:visible; }
-  .panel-1-nav { justify-content:center; font-size:10px !important; gap:12px !important; }
-  .panel-1-nav a { padding:13px 17px !important; }
-  .panel-3 { background:#0b0b0b; padding:0; display:block; }
-  .panel-3::before { content:''; display:block; height:52svh; min-height:300px; background-image:linear-gradient(0deg,#0b0b0b,transparent 35%),url('/images/3-mobile.webp'); background-size:cover; background-position:30% center; }
-  .bio-content { width:100%; max-width:620px; margin:auto; padding:24px 25px 60px; gap:22px; }
-  .panel-3-title { font-size:40px !important; }
-  .panel-3-text { font-size:16px; line-height:1.75; }
-  .panel-4 { padding:60px 25px; background-image:linear-gradient(rgba(11,11,11,.90),rgba(11,11,11,.97)),url('/images/4-mobile.webp'); align-items:center; }
-  .panel-4-inner { max-width:570px; }
-  .panel-4-gmail { font-size:12px; letter-spacing:.03em; }
-  .panel-4-socials-grid { gap:8px; }
-  .panel-4-socials-grid a { padding:9px 10px; }
-}
-/* Lightweight mobile hero background. The original artwork stays untouched. */
-@media(max-width:760px) { .panel-1 { background-image:url('/images/1c-mobile.webp'); } }
-@media(prefers-reduced-motion:reduce) { * { scroll-behavior:auto !important; transition:none !important; } }
+<link rel="preload" as="image" href="/argentina-2077/assets/bandera.webp">
+<link rel="stylesheet" href="/argentina-2077/home.css?v=20261115-1">
 
 
-/* Review adjustments: solid music button, original slogan type, full-panel snapping. */
-.container { height:100svh; scroll-snap-type:y mandatory; }
-.panel { scroll-snap-align:start; scroll-snap-stop:always; min-height:100svh; }
-.panel-2 { height:100svh; }
-.panel-1-nav a:last-child { background:#454545; border-color:#737373; color:#fff; }
-.panel-1-nav a:last-child:hover { background:#626262; border-color:#999; }
-.center-text { font-family:"Times New Roman",Times,serif; font-weight:700; letter-spacing:.02em; font-size:clamp(14px,3.5vw,74px); line-height:1.05; padding:.5rem .9rem; width:max-content; max-width:calc(100% - 2rem); white-space:nowrap; overflow-wrap:normal; word-break:normal; }
-@media(max-width:760px) {
-  .panel-3 { height:100svh; min-height:100svh; display:grid; grid-template-rows:minmax(0,1fr) auto; overflow:visible; }
-  .panel-3::before { height:100%; min-height:0; background-position:30% 40%; }
-  .bio-content { padding:16px 23px 22px; gap:12px; max-width:620px; }
-  .panel-3-eyebrow { font-size:9px; letter-spacing:.17em; }
-  .panel-3-title { font-size:32px !important; }
-  .panel-3-divider { height:2px; width:36px; }
-  .panel-3-text { font-size:14px; line-height:1.5; margin:0; }
-  .center-text { width:calc(100% - 2rem); white-space:normal; font-size:clamp(18px,5.2vw,30px); line-height:1.12; padding:10px 12px; }
-  .panel-4 { padding:22px 23px; justify-content:center; }
-  .panel-4-inner { gap:14px; }
-  .panel-4-title { font-size:36px; }
-  .panel-4-form { gap:10px; }
-  .panel-4-form input,.panel-4-form textarea { padding:10px 12px; }
-  .panel-4-form textarea { min-height:72px; }
-  .panel-4-submit { padding:11px 22px; }
-  .panel-4-socials { gap:7px; }
-  .panel-4-gmail-row { margin-bottom:0; }
-  .panel-4-socials-grid { display:grid; grid-template-columns:repeat(2,1fr); }
-  .panel-4-socials-grid a { font-size:10px; padding:7px 9px; }
-}
-/* Small landscape windows retain readable content and can scroll inside a section. */
-@media(max-width:760px) and (max-height:540px) {
-  .panel-3,.panel-4 { height:auto; min-height:100svh; }
-  .panel-3::before { height:100px; }
-}
-
-/* Home: two primary links and one full-width shop link. */
-.panel-1-nav {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px 12px;
-  width: min(440px, calc(100% - 36px));
-  max-width: 100%;
-  white-space: normal;
-}
-.panel-1-nav a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 48px;
-  padding: 13px 12px;
-  text-align: center;
-  line-height: 1.25;
-  white-space: nowrap;
-}
-.panel-1-nav a:nth-of-type(2) {
-  background: #454545;
-  border-color: #737373;
-  color: #fff;
-}
-.panel-1-nav a:nth-of-type(2):hover {
-  background: #626262;
-  border-color: #999;
-}
-.panel-1-nav a.nav-shop {
-  grid-column: 1 / -1;
-  background: rgba(16,16,16,.88);
-  border-color: rgba(255,255,255,.52);
-  color: #fff;
-}
-@media(hover:hover) and (pointer:fine) {
-  .panel-1-nav a.nav-shop:hover {
-    background: #fff;
-    border-color: #fff;
-    color: #111;
-  }
-}
-@media(max-width:760px) {
-  .panel-1-nav {
-    width: min(400px, calc(100% - 20px));
-    gap: 9px !important;
-  }
-  .panel-1-nav a {
-    min-height: 44px;
-    padding: 12px 8px !important;
-    font-size: clamp(9px, 2.5vw, 11px);
-    letter-spacing: .11em;
-  }
-}
-
-</style>
 </head>
-<body>
+<body class="hero-type-only">
+
 
 <div class="container">
-  <section class="panel panel-1">
-    <img src="/images/1b.png" alt="Logo Chebrolet - artista de Hardbass Argentino" class="panel-1-logo" />
-    <h1>CHEBROLET</h1>
+  <section class="panel panel-1" id="inicio">
+    <div class="hero-art" role="img" aria-label="Bandera roja y negra de Argentina 2077, con sol sin pupilas entre bruma y brasas"></div>
+    <div class="hero-content">
+    <img src="/argentina-2077/assets/chebrolet-logo-final.png" alt="Logo Chebrolet - artista de Hardbass Argentino" class="panel-1-logo" />
+    <h1 class="artist-name">CHEBROLET</h1>
     <nav class="panel-1-nav" aria-label="Accesos principales">
-      <a href="/shows/">Próximos shows</a>
+      <a href="https://chebrolet.com.ar/shows/">Próximos shows</a>
       <span class="panel-1-nav-separator" aria-hidden="true">·</span>
-      <a href="/music/">Música</a>
-      <a href="/shop/" class="nav-shop">Tienda</a>
+      <a href="https://chebrolet.com.ar/music/">Música</a>
+      <a href="https://chebrolet.com.ar/shop/" class="nav-shop">Tienda</a>
     </nav>
+    </div>
   </section>
 
-  <section class="panel panel-2">
+  <!-- Conservada íntegra para restaurar al quitar hidden. -->
+  <section class="panel panel-2" hidden inert aria-hidden="true">
     <div class="corner">
       <a href="https://www.youtube.com/watch?v=NSMKazzq5SY" class="c top-left" target="_blank" rel="noopener noreferrer" aria-label="Ver Renault 12 en YouTube">
         <img src="/images/2.webp" loading="lazy" decoding="async" alt="Chebrolet - Renault 12">
@@ -539,26 +102,29 @@ a:focus-visible,button:focus-visible { outline:2px solid #fff; outline-offset:5p
     </div>
   </section>
 
-  <section class="panel panel-3">
+  <section class="panel panel-3" id="bio">
+    <div class="section-outro-smoke" aria-hidden="true"></div>
+    <div class="portrait-art"><img src="/argentina-2077/assets/chebrolet.webp" alt="Chebrolet con gorra, lentes oscuros y abrigo negro, sobre un paisaje de suelo oscuro y cielo rojo" loading="lazy" decoding="async"></div>
     <div class="bio-content">
     <span class="panel-3-eyebrow">Hardbass Argentino desde 2021</span>
-    <h1 class="panel-3-title">CHEBROLET</h1>
+    <h2 class="panel-3-title">CHEBROLET</h2>
     <div class="panel-3-divider"></div>
     <p class="panel-3-text">Chebrolet es un artista argentino de música electrónica y cantor, pionero del Hardbass Argentino, género que desde 2021 ha llevado a lo más alto con hits como <strong>“Renault 12”</strong>, <strong>“Caballo en Renault 19”</strong> y <strong>“Vendo Gol Mod. 1998”</strong>.</p>
     <p class="panel-3-text">Chebrolet no solo ha triunfado en el internet sino que también ha recorrido el país con sus presentaciones en vivo, infiltrando todo tipo de escenas; desde bares de rock hasta boliches cumbieros y una vez tocó en un puesto de choripanes y en el Lollapalooza en la misma semana.</p>
     </div>
   </section>
 
-  <section class="panel panel-4">
+  <section class="panel panel-4" id="contacto">
+    <div class="contact-art" aria-hidden="true"></div>
     <div class="panel-4-inner">
       <span class="panel-4-eyebrow">Bookings & contacto</span>
       <h2 class="panel-4-title">Contacto</h2>
 
       <form class="panel-4-form" action="https://formspree.io/f/mzdqqnba" method="POST" id="contactForm">
-        <input type="text" name="nombre" placeholder="Nombre" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="text" name="asunto" placeholder="Asunto">
-        <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+        <input type="text" name="nombre" placeholder="Nombre" aria-label="Nombre" required>
+        <input type="email" name="email" placeholder="Email" aria-label="Email" required>
+        <input type="text" name="asunto" placeholder="Asunto" aria-label="Asunto">
+        <textarea name="mensaje" placeholder="Mensaje" aria-label="Mensaje" required></textarea>
         <button type="submit" class="panel-4-submit">Enviar</button>
       </form>
       <p class="panel-4-success" id="formSuccess">Mensaje enviado — te respondo a la brevedad.</p>
@@ -628,6 +194,29 @@ a:focus-visible,button:focus-visible { outline:2px solid #fff; outline-offset:5p
   }
 
 
+})();
+</script>
+
+<script>
+(function () {
+  const hero = document.querySelector('.panel-1');
+  const group = hero && hero.querySelector('.hero-content');
+  if (!hero || !group || document.body.classList.contains("hero-type-only")) return;
+  let frame;
+  function positionGroup() {
+    cancelAnimationFrame(frame);
+    frame = requestAnimationFrame(function () {
+      // Layout offsets exclude transforms, so repeated measurements never drift.
+      const originalGap = Math.max(0, hero.clientHeight - group.offsetTop - group.offsetHeight);
+      group.style.setProperty('--hero-lower-offset', (originalGap / 2) + 'px');
+    });
+  }
+  const observer = new ResizeObserver(positionGroup);
+  observer.observe(hero);
+  observer.observe(group);
+  window.addEventListener('resize', positionGroup, { passive: true });
+  if (document.fonts) document.fonts.ready.then(positionGroup);
+  positionGroup();
 })();
 </script>
 </body>

@@ -1,0 +1,208 @@
+:root { color-scheme:dark; --red:#e51b23; --black:#080808; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; scroll-padding-top:30px; }
+body { margin:0; background:var(--black); color:#fff; font-family:system-ui,-apple-system,"Segoe UI",sans-serif; -webkit-font-smoothing:antialiased; }
+a { color:inherit; text-decoration:none; }
+button,input,textarea { font:inherit; }
+a,button { -webkit-tap-highlight-color:transparent; }
+a:focus-visible,button:focus-visible { outline:2px solid white; outline-offset:5px; }
+.preview-label { position:fixed; z-index:100; top:18px; left:22px; border:1px solid #ffffff2e; background:#090909bb; backdrop-filter:blur(12px); padding:9px 12px; font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:.16em; }
+.preview-label span { color:#bbb; margin-left:12px; border-left:1px solid #ffffff40; padding-left:12px; }
+.panel { min-height:100svh; position:relative; overflow:hidden; }
+.panel[hidden] { display:none !important; }
+.panel-1 { display:flex; align-items:center; justify-content:flex-end; padding:90px 7vw; background:#0c0706; isolation:isolate; }
+.hero-art { position:absolute; z-index:-2; inset:0; background-image:url('./assets/bandera.webp'); background-size:cover; background-position:center; }
+.panel-1::before { content:''; position:absolute; z-index:-1; inset:0; background:linear-gradient(90deg,#06030305 22%,#09050535 44%,#090505d9 69%,#090505eb),linear-gradient(0deg,#080808c9,transparent 25%,transparent 80%,#08080855); }
+.hero-content { width:39%; max-width:580px; display:flex; flex-direction:column; align-items:flex-start; gap:20px; }
+.panel-1-logo { width:142px; height:auto; filter:drop-shadow(0 6px 20px #0008); margin-bottom:12px; }
+.artist-name { font-family:'Lato',Arial,sans-serif; font-size:clamp(20px,2.2vw,30px); letter-spacing:.13em; font-weight:900; margin:0; }
+.panel-1-nav { display:grid; grid-template-columns:1fr 1fr; width:100%; max-width:410px; gap:10px; margin-top:14px; }
+.panel-1-nav a { display:flex; align-items:center; justify-content:center; min-height:49px; border:1px solid #ffffff66; background:#242020b3; font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.12em; padding:14px 9px; transition:background .2s,border-color .2s; }
+.panel-1-nav a:first-child { background:#cf131b; border-color:#e3262e; }
+.panel-1-nav a:nth-of-type(2) { background:#454141e6; }
+.panel-1-nav a.nav-shop { grid-column:1/-1; background:#08080899; }
+.panel-1-nav-separator { display:none; }
+.panel-1-nav a:hover { background:#fff; color:#111; border-color:#fff; }
+.panel-3 { display:flex; align-items:center; justify-content:flex-end; background:#080808; padding:90px 7vw; isolation:isolate; }
+.portrait-art { position:absolute; z-index:-2; left:0; top:0; bottom:0; width:53%; background:radial-gradient(ellipse at 58% 48%,#58100d5c,transparent 61%); overflow:hidden; }
+.portrait-art img { position:absolute; right:0; bottom:-4%; height:102%; width:auto; max-width:none; filter:drop-shadow(-8px 0 24px #ba191314); }
+.portrait-art::after { content:''; position:absolute; inset:0; background:linear-gradient(0deg,#080808,transparent 15%),linear-gradient(90deg,transparent 84%,#080808); }
+.bio-content { width:46%; max-width:610px; display:flex; flex-direction:column; align-items:flex-start; gap:25px; }
+.panel-3-eyebrow,.panel-4-eyebrow { color:#bdb6b6; text-transform:uppercase; font-size:10px; font-weight:750; letter-spacing:.21em; }
+.panel-3-title,.panel-4-title { font-family:'Lato',Arial,sans-serif; font-weight:900; font-size:clamp(36px,4.5vw,66px); letter-spacing:-.025em; line-height:1; margin:0; }
+.panel-3-divider { width:48px; height:3px; background:var(--red); }
+.panel-3-text { font-size:17px; line-height:1.8; color:#d3cece; margin:0; }
+.panel-3-text strong { color:white; }
+.panel-4 { display:flex; align-items:center; padding:85px 6vw; background:#100304; isolation:isolate; }
+.contact-art { position:absolute; inset:0; z-index:-3; background:url('./assets/tesla.webp') center center / cover no-repeat; filter:grayscale(1) brightness(.7) contrast(1.15); }
+.panel-4::before { content:''; position:absolute; inset:0; z-index:-2; background:#b00a15; mix-blend-mode:color; }
+.panel-4::after { content:''; position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg,#080808fa 0%,#080808ef 34%,#1203049c 55%,#16000414 100%),linear-gradient(0deg,#0808088c,transparent 45%); }
+.panel-4-inner { width:100%; max-width:550px; display:flex; flex-direction:column; align-items:flex-start; gap:26px; }
+.panel-4-form { width:100%; display:flex; flex-direction:column; gap:15px; }
+.panel-4-form input,.panel-4-form textarea { display:block; width:100%; background:#101010ad; border:1px solid #ffffff33; border-radius:0; color:white; padding:15px 16px; font-size:16px; outline:none; transition:border-color .2s; }
+.panel-4-form input::placeholder,.panel-4-form textarea::placeholder { color:#bbb; font-size:10px; font-weight:750; text-transform:uppercase; letter-spacing:.15em; }
+.panel-4-form input:focus,.panel-4-form textarea:focus { border-color:var(--red); outline:1px solid var(--red); }
+.panel-4-form textarea { resize:vertical; min-height:112px; }
+.panel-4-submit { align-self:flex-start; color:white; background:#ce141c; border:1px solid #e3262e; padding:14px 30px; cursor:pointer; font-size:10px; font-weight:800; letter-spacing:.17em; text-transform:uppercase; }
+.panel-4-submit:hover { background:#f02830; }
+.panel-4-submit:disabled { opacity:.6; cursor:wait; }
+.panel-4-success { display:none; color:#eee; font-size:14px; }
+.panel-4-divider { width:40px; height:1px; background:#ffffff40; }
+.panel-4-socials { display:flex; flex-direction:column; gap:20px; }
+.panel-4-gmail-row { display:flex; align-items:center; gap:9px; }
+.panel-4-gmail-row svg { width:18px; height:18px; fill:#bbb; }
+.panel-4-gmail { font-size:13px; font-weight:700; color:#ddd; letter-spacing:.05em; }
+.panel-4-socials-grid { display:flex; flex-wrap:wrap; gap:8px; }
+.panel-4-socials-grid a { display:flex; align-items:center; gap:7px; border:1px solid #ffffff40; color:#ddd; padding:10px 11px; font-size:10px; text-transform:uppercase; font-weight:700; letter-spacing:.04em; }
+.panel-4-socials-grid a:hover { background:#ffffff12; border-color:#fff; }
+.panel-4-socials-grid svg { width:18px; height:18px; fill:currentColor; flex-shrink:0; }
+@media(max-width:760px) {
+ .preview-label { top:12px; left:14px; padding:7px 9px; font-size:8px; }
+ .preview-label span { margin-left:8px; padding-left:8px; }
+ .panel-1 { display:block; min-height:100svh; padding:0; background:#080808; }
+ .hero-art { position:relative; inset:auto; width:100%; height:47svh; min-height:290px; background-position:35% center; background-size:cover; z-index:0; }
+ .hero-art::after { content:''; position:absolute; inset:0; background:linear-gradient(0deg,#080808,transparent 38%); }
+ .panel-1::before { display:none; }
+ .hero-content { position:relative; width:100%; max-width:none; margin-top:-32px; padding:0 27px 76px; gap:12px; align-items:center; text-align:center; }
+ .panel-1-logo { width:90px; margin:0 0 3px; }
+ .artist-name { font-size:19px; }
+ .panel-1-nav { margin-top:10px; width:100%; max-width:390px; gap:8px; }
+ .panel-1-nav a { min-height:46px; font-size:9px; }
+ .panel-3 { display:block; padding:0; }
+ .portrait-art { position:relative; width:100%; height:60svh; min-height:340px; z-index:0; }
+ .portrait-art img { height:108%; right:8%; bottom:-8%; }
+ .portrait-art::after { background:linear-gradient(0deg,#080808,transparent 26%); }
+ .bio-content { position:relative; width:100%; max-width:620px; margin:0 auto; padding:24px 27px 65px; gap:20px; }
+ .panel-3-title,.panel-4-title { font-size:40px; }
+ .panel-3-eyebrow,.panel-4-eyebrow { font-size:9px; }
+ .panel-3-text { font-size:16px; line-height:1.75; }
+ .panel-4 { display:block; padding:280px 27px 55px; min-height:100svh; }
+ .contact-art { background-size:auto 410px; background-position:65% top; }
+ .panel-4::after { background:linear-gradient(0deg,#080808 0%,#080808 54%,#080808ef 68%,#08080800 95%); }
+ .panel-4-inner { max-width:570px; margin:auto; gap:24px; }
+ .panel-4-form { gap:13px; }
+ .panel-4-socials-grid { gap:8px; }
+ .panel-4-socials-grid a { font-size:10px; }
+}
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } * { transition:none !important; } }
+@media(max-width:760px) {
+ .contact-art { background-position:76% -70px; }
+ .panel-4::after { background:linear-gradient(180deg,transparent 0px,#08080820 150px,#080808a0 260px,#080808 370px); }
+}
+
+/* Review 2: original home content, visualizer backdrop and warmer contact color. */
+.hero-content { align-items:center; gap:28px; }
+.panel-1-logo { width:clamp(220px,24vw,330px); margin:0; }
+.artist-name { font-size:clamp(36px,4.2vw,64px); letter-spacing:-.025em; line-height:1; }
+.portrait-art { background:#190b08; }
+.portrait-art img { inset:0; width:100%; height:100%; object-fit:cover; object-position:65% center; filter:none; }
+.contact-art { background-position:calc(50% - 55px) center; }
+.panel-4 { background:#180904; }
+.panel-4::before { background:#c13b0c; }
+.panel-4::after { background:linear-gradient(90deg,#080808fa 0%,#080808ef 34%,#1c0b049c 55%,#24100414 100%),linear-gradient(0deg,#0808088c,transparent 45%); }
+@media(min-width:761px) and (max-height:760px) {
+ .panel-1 { padding-top:65px; padding-bottom:65px; }
+ .panel-4 { padding-top:65px; padding-bottom:45px; }
+ .panel-4-inner { gap:18px; }
+}
+@media(max-width:760px) {
+ .hero-content { padding-bottom:45px; gap:22px; }
+ .panel-1-logo { width:170px; }
+ .artist-name { font-size:40px; }
+ .portrait-art img { inset:0; height:100%; width:100%; object-position:65% center; }
+ .contact-art { background-position:calc(76% - 24px) -70px; }
+ .panel-4::after { background:linear-gradient(180deg,transparent 0px,#08080820 150px,#080808a0 260px,#080808 370px); }
+}
+
+/* Review 3: centered home and clean portrait over the soft visualizer world. */
+.panel-1 { justify-content:center; }
+.panel-1::before { background:linear-gradient(0deg,#08080885,transparent 55%,#08080825),linear-gradient(#08080855,#08080855); }
+.hero-content { width:min(440px,100%); max-width:100%; text-align:center; gap:26px; }
+.panel-1-logo { width:clamp(210px,29vw,390px); }
+.artist-name { font-size:clamp(42px,6vw,82px); }
+.portrait-art { background:#260e08; isolation:isolate; }
+.portrait-art::before { content:''; position:absolute; inset:-55px; z-index:-1; background:url('./assets/visualizer.webp') 65% center / cover no-repeat; filter:blur(35px) brightness(.6) saturate(.7); }
+.portrait-art img { inset:auto; right:0; bottom:-4%; height:102%; width:auto; max-width:none; object-fit:initial; object-position:initial; filter:drop-shadow(0 0 22px #16080450); }
+.portrait-art::after { background:linear-gradient(0deg,#080808,transparent 18%),linear-gradient(90deg,transparent 74%,#080808),linear-gradient(#8f230816,#8f230816); }
+@media(max-width:760px) {
+ .panel-1 { display:flex; align-items:center; justify-content:center; padding:80px 24px; }
+ .hero-art { position:absolute; inset:0; height:100%; min-height:0; background-position:35% center; z-index:-2; }
+ .hero-art::after { display:none; }
+ .panel-1::before { display:block; background:linear-gradient(#08080855,#08080855),linear-gradient(0deg,#08080890,transparent 65%); }
+ .hero-content { margin:0; padding:0; gap:25px; }
+ .panel-1-logo { width:min(68vw,290px); }
+ .artist-name { font-size:clamp(36px,10vw,62px); }
+ .portrait-art::before { filter:blur(28px) brightness(.6) saturate(.7); }
+ .portrait-art img { height:108%; right:8%; bottom:-8%; width:auto; }
+ .portrait-art::after { background:linear-gradient(0deg,#080808,transparent 26%); }
+}
+
+/* Continuous environment behind both portrait and biography, with a light soft focus. */
+.panel-3 { background:#170b08; }
+.panel-3::before { content:''; position:absolute; inset:-12px; z-index:-3; background:url('./assets/bio-world.webp') center center / cover no-repeat; filter:blur(4px) brightness(.86); }
+.panel-3::after { content:''; position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg,#08080800 0%,#0808080a 24%,#08080845 47%,#080808a8 71%,#080808bf 100%),linear-gradient(0deg,#08080885,transparent 28%,transparent 78%,#08080825); }
+.portrait-art { background:transparent; isolation:auto; }
+.portrait-art::before { display:none; }
+.portrait-art::after { background:linear-gradient(0deg,#080808a6,transparent 18%); }
+.bio-content { position:relative; z-index:1; }
+@media(max-width:760px) {
+ .panel-3::before { background-position:42% center; filter:blur(3px) brightness(.8); }
+ .panel-3::after { background:linear-gradient(180deg,#08080800 18%,#08080830 40%,#080808a8 61%,#080808c4 100%); }
+ .portrait-art::after { background:linear-gradient(0deg,#08080866,transparent 26%); }
+}
+@media(max-width:760px) {
+ .portrait-art img { -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 62%,transparent 90%); mask-image:linear-gradient(180deg,#000 0%,#000 62%,transparent 90%); }
+ .portrait-art::after { background:none; }
+}
+
+/* Shared atmospheric edge between the flag and biography. */
+.panel-1::after, .section-outro-smoke { content:''; position:absolute; left:0; right:0; bottom:-1px; height:clamp(140px,21vh,220px); z-index:-1; pointer-events:none; background:linear-gradient(0deg,#120d0b 0%,#120d0bd9 12%,#120d0b65 47%,transparent 100%),radial-gradient(ellipse at 26% 91%,#ac9a8530,transparent 58%),radial-gradient(ellipse at 77% 80%,#baab9526,transparent 54%); }
+.hero-content { position:relative; z-index:1; }
+.panel-3::after { background:linear-gradient(180deg,#120d0b 0%,#120d0b85 7%,transparent 23%),radial-gradient(ellipse at 23% 73%,#c4b7a52e,transparent 59%),radial-gradient(ellipse at 76% 44%,#c5b5a21b,transparent 64%),linear-gradient(90deg,#08080800 0%,#0808080a 24%,#08080845 47%,#080808a8 71%,#080808bf 100%),linear-gradient(0deg,#080808af,transparent 28%); }
+.portrait-art img { filter:blur(.45px) sepia(.08) saturate(.86) contrast(.95) brightness(.95) drop-shadow(0 0 14px #51210e40); }
+.portrait-art::after { background:radial-gradient(ellipse at 25% 76%,#c2ae9720,transparent 65%),linear-gradient(0deg,#0808088c,transparent 25%); }
+@media(max-width:760px) {
+ .panel-1::after, .section-outro-smoke { height:145px; }
+ .panel-3::after { background:linear-gradient(180deg,#120d0b 0%,#120d0b60 6%,transparent 17%),radial-gradient(ellipse at 35% 36%,#c2ad9626,transparent 60%),linear-gradient(180deg,#08080800 18%,#08080830 40%,#080808a8 61%,#080808c4 100%); }
+ .portrait-art::after { background:radial-gradient(ellipse at 30% 69%,#bba68a1c,transparent 65%); }
+}
+
+/* Reuse the accepted smoke transition at the biography/contact boundary. */
+.section-outro-smoke { z-index:0; }
+.panel-4::after { background:linear-gradient(180deg,#120d0b 0%,#120d0b85 7%,transparent 23%),linear-gradient(90deg,#080808fa 0%,#080808ef 34%,#1c0b049c 55%,#24100414 100%),linear-gradient(0deg,#0808088c,transparent 45%); }
+.portrait-art img { filter:blur(.85px) sepia(.08) saturate(.84) contrast(.93) brightness(.96) drop-shadow(0 0 18px #51210e40); }
+@media(max-width:760px) {
+ .panel-4::after { background:linear-gradient(180deg,#120d0b 0%,#120d0b60 50px,transparent 145px),linear-gradient(180deg,transparent 0px,#08080820 150px,#080808a0 260px,#080808 370px); }
+ .portrait-art img { filter:blur(.65px) sepia(.08) saturate(.84) contrast(.93) brightness(.96) drop-shadow(0 0 18px #51210e40); }
+}
+
+/* Move the complete hero group down by half of its original bottom gap. */
+.hero-content { transform:translateY(var(--hero-lower-offset,0px)); }
+
+
+/* Typography-led opening: keep the flag open and anchor the name below it. */
+.hero-type-only .panel-1 {
+  align-items:flex-end;
+  padding:90px 5vw clamp(78px,14svh,160px);
+}
+.hero-type-only .hero-content {
+  width:min(100%,960px);
+  transform:none;
+  gap:24px;
+}
+.hero-type-only .panel-1-logo { display:none; }
+.hero-type-only .artist-name {
+  font-size:clamp(68px,10.8vw,148px);
+  letter-spacing:-.035em;
+  line-height:.94;
+  text-shadow:0 3px 30px #0007;
+}
+.hero-type-only .panel-1-nav { margin-top:8px; max-width:540px; gap:12px; }
+.hero-type-only .panel-1-nav a { min-height:60px; font-size:13px; padding:18px 14px; }
+@media(max-width:760px) {
+  .hero-type-only .panel-1 { padding:80px 24px clamp(72px,14svh,130px); }
+  .hero-type-only .hero-content { gap:22px; }
+  .hero-type-only .artist-name { font-size:clamp(36px,12.8vw,96px); }
+  .hero-type-only .panel-1-nav { max-width:440px; gap:10px; }
+  .hero-type-only .panel-1-nav a { min-height:54px; font-size:11px; padding:16px 10px; }
+}
