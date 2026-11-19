@@ -206,3 +206,25 @@ a:focus-visible,button:focus-visible { outline:2px solid white; outline-offset:5
   .hero-type-only .panel-1-nav { max-width:440px; gap:10px; }
   .hero-type-only .panel-1-nav a { min-height:54px; font-size:11px; padding:16px 10px; }
 }
+
+/* Full-screen magnetic scrolling on the main page, desktop and mobile.
+   Taller sections remain scrollable before snapping to the next one. */
+html {
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 0;
+}
+.container > .panel:not([hidden]) {
+  min-height: 100svh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+@media (max-width: 760px) {
+  .container > .panel:not([hidden]) {
+    overflow: visible;
+  }
+  /* Avoid cutting off the biography or contact form on small screens. */
+  .panel-3, .panel-4 { height: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
