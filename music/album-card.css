@@ -18,3 +18,24 @@
 
 .presave-card { margin-bottom: 18px; align-items: center; }
 .presave-card .chapter-subtitle { display: block; margin-top: 7px; color: #d1d1d1; font-size: .68em; font-weight: 400; line-height: 1.2; }
+
+.argentina-release { align-items: start; grid-template-columns: minmax(110px, 32%) minmax(0, 1fr); }
+.argentina-release h3 { margin-bottom: 15px; }
+.release-choice { border: 1px solid #454545; background: #141414; }
+.release-choice + .release-choice { margin-top: 8px; }
+.release-choice-featured { border-color: #903c3c; background: #291313; }
+.release-choice summary { display: flex; align-items: center; justify-content: space-between; gap: 9px; min-height: 44px; padding: 8px 11px; list-style: none; cursor: pointer; font-size: .9rem; font-weight: 760; }
+.release-choice summary::-webkit-details-marker { display: none; }
+.release-choice summary::after { content: "+" / ""; color: #bcbcbc; font-size: 1.15rem; font-weight: 400; }
+.release-choice[open] summary::after { content: "−" / ""; }
+.release-choice summary:focus-visible { outline: 2px solid #f0dede; outline-offset: 2px; }
+.release-choice > .album-links { padding: 0 8px 8px; }
+.release-choice .album-platform-button { min-height: 44px; }
+.release-choice .album-platform-copy strong { font-size: .875rem; }
+@media (max-width: 530px) {
+  .argentina-release { grid-template-columns: 1fr; gap: 14px; }
+  .argentina-release > .album-cover { width: min(100%, 240px); justify-self: center; }
+}
+@media (hover: hover) and (pointer: fine) {
+  .release-choice summary:hover { background: #ffffff0c; }
+}
