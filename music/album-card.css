@@ -23,7 +23,6 @@
 .argentina-release h3 { margin-bottom: 15px; }
 .release-choice { border: 1px solid #454545; background: #141414; }
 .release-choice + .release-choice { margin-top: 8px; }
-.release-choice-featured { border-color: #903c3c; background: #291313; }
 .release-choice summary { display: flex; align-items: center; justify-content: space-between; gap: 9px; min-height: 44px; padding: 8px 11px; list-style: none; cursor: pointer; font-size: .9rem; font-weight: 760; }
 .release-choice summary::-webkit-details-marker { display: none; }
 .release-choice summary::after { content: "+" / ""; color: #bcbcbc; font-size: 1.15rem; font-weight: 400; }

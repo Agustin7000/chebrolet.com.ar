@@ -35,7 +35,7 @@
           </a>
           </div>
         </details>
-        <details class="release-choice release-choice-featured" name="argentina-editions" open>
+        <details class="release-choice" name="argentina-editions">
           <summary>Tesla Truck</summary>
           <div class="album-links">
                 <a class="album-platform-button" href="https://youtu.be/rnmc8yXesHo" target="_blank" rel="noopener noreferrer">
