@@ -38,6 +38,10 @@
         <details class="release-choice" name="argentina-editions">
           <summary>Tesla Truck</summary>
           <div class="album-links">
+                <a class="album-platform-button" href="https://open.spotify.com/track/2ds0jHFZoSrcihTgeSGske" target="_blank" rel="noopener noreferrer">
+            <span class="album-platform-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5A10.5 10.5 0 1 0 12 22.5 10.5 10.5 0 0 0 12 1.5Zm4.82 15.15a.65.65 0 0 1-.9.22c-2.46-1.5-5.56-1.84-9.2-1.01a.65.65 0 1 1-.29-1.27c3.98-.9 7.4-.51 10.17 1.18.31.19.41.58.22.88Zm1.29-2.87a.81.81 0 0 1-1.12.27c-2.82-1.73-7.12-2.23-10.45-1.22a.81.81 0 1 1-.47-1.55c3.81-1.16 8.55-.6 11.77 1.37.38.23.5.74.27 1.13Zm.11-2.99C14.84 8.78 9.27 8.6 6.04 9.57a.98.98 0 1 1-.56-1.87c3.71-1.11 9.86-.9 13.74 1.4a.98.98 0 0 1-1 1.69Z"/></svg></span>
+            <span class="album-platform-copy"><strong>Spotify</strong></span>
+          </a>
                 <a class="album-platform-button" href="https://youtu.be/rnmc8yXesHo" target="_blank" rel="noopener noreferrer">
             <span class="album-platform-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4L15.8 12l-6.2 3.6Z"/></svg></span>
             <span class="album-platform-copy"><strong>YouTube</strong></span>
