@@ -46,6 +46,14 @@
             <span class="album-platform-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4L15.8 12l-6.2 3.6Z"/></svg></span>
             <span class="album-platform-copy"><strong>YouTube</strong></span>
           </a>
+                <a class="album-platform-button" href="https://music.youtube.com/watch?v=CSb_Vi3T7qA" target="_blank" rel="noopener noreferrer">
+            <span class="album-platform-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4L15.8 12l-6.2 3.6Z"/></svg></span>
+            <span class="album-platform-copy"><strong>YouTube Music</strong></span>
+          </a>
+                <a class="album-platform-button" href="https://tidal.com/track/573208511/u" target="_blank" rel="noopener noreferrer">
+            <span class="album-platform-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m0 9 4-4 4 4-4 4zm8 0 4-4 4 4-4 4zm8 0 4-4 4 4-4 4zm-8 8 4-4 4 4-4 4z"/></svg></span>
+            <span class="album-platform-copy"><strong>Tidal</strong></span>
+          </a>
           </div>
         </details>
       </div>
