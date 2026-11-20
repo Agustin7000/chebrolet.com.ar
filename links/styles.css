@@ -22,3 +22,6 @@
   .accordion-panel .show-link{padding:12px 5px}
   .accordion-panel .music-release{padding:9px 0 9px 6px;gap:8px}
 }
+
+#music-panel .album-section{margin-top:30px}
+#music-panel .album-card + .album-card{margin-top:12px}
