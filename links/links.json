@@ -52,6 +52,16 @@
         },
         {
           "city": "LA PLATA",
+          "date": "20/11",
+          "eventDate": "2026-11-20",
+          "visibleThrough": "2026-11-21",
+          "venue": "CIUDAD DE GATOS",
+          "description": "Fiesta Pre Festi Aire · 10 años de Ciudad de Gatos",
+          "url": "https://catpass.net/eventos/fiesta-pre-festi-aire-10-a-os-de-ciudad-de-gatos-20-11-2026-dho",
+          "active": true
+        },
+        {
+          "city": "LA PLATA",
           "date": "5/12",
           "eventDate": "2026-12-05",
           "venue": "PURA VIDA",

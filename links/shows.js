@@ -1,5 +1,5 @@
 // Shared show visibility for /shows and /links.
-// Every show in links.json must include eventDate in YYYY-MM-DD format.
+// Dates use YYYY-MM-DD. Set visibleThrough to keep a show listed through a later day.
 (function () {
   'use strict';
   const formatter = new Intl.DateTimeFormat('en-US', {
@@ -15,8 +15,10 @@
 
   function upcoming(shows, now = new Date()) {
     const today = argentinaDay(now);
-    return shows.filter(show => show.active !== false &&
-      (!show.eventDate || show.eventDate >= today));
+    return shows.filter(show => {
+      const lastVisibleDay = show.visibleThrough ?? show.eventDate;
+      return show.active !== false && (!lastVisibleDay || lastVisibleDay >= today);
+    });
   }
 
   function watch(shows, render) {
