@@ -45,6 +45,7 @@
   window.ChebroletReleaseLinks = {
     render(release, container, className, youtubePath) {
       for (const { key, label, icon } of platforms) {
+        if (key !== "spotify" && key !== "youtubeId") continue;
         const value = release[key];
         if (!value) continue;
 
