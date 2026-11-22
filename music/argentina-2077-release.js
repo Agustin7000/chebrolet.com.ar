@@ -46,6 +46,10 @@
             <span class="album-platform-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4L15.8 12l-6.2 3.6Z"/></svg></span>
             <span class="album-platform-copy"><strong>YouTube</strong></span>
           </a>
+                <a class="album-platform-button" href="https://music.apple.com/ar/album/tesla-truck/6827168191?i=6827168196" target="_blank" rel="noopener noreferrer">
+            <span class="album-platform-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.7 3.2c-1.5.1-3.1.5-4.5.9-1.2.3-2.5.6-3.8.8v11.3a3.7 3.7 0 0 0-2.2-.2c-2.1.4-3.6 1.9-3.3 3.4.3 1.5 2.1 2.2 4.1 1.8 1.9-.4 3.2-1.7 3.2-3.3V8.1l5.7-1.4v7.4a3.7 3.7 0 0 0-2.2-.2c-2.1.4-3.6 1.9-3.3 3.4.3 1.5 2.1 2.2 4.1 1.8 1.9-.4 3.2-1.7 3.2-3.3V3.1l-.8.1Z"/></svg></span>
+            <span class="album-platform-copy"><strong>Apple Music</strong></span>
+          </a>
                 <a class="album-platform-button" href="https://music.youtube.com/watch?v=CSb_Vi3T7qA" target="_blank" rel="noopener noreferrer">
             <span class="album-platform-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4L15.8 12l-6.2 3.6Z"/></svg></span>
             <span class="album-platform-copy"><strong>YouTube Music</strong></span>
