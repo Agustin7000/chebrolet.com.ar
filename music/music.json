@@ -4,49 +4,64 @@
       "title": "RENAULT 12 BREAK (TECH MIX)",
       "youtubeId": "Aplm6BZioEE",
       "spotify": "https://open.spotify.com/track/6vZWy4JRVCUVi98GdnxdDh",
-      "active": true
+      "active": true,
+      "appleMusic": "https://music.apple.com/ar/album/renault-12-break-tech-remix-single/6815727112"
     },
     {
       "title": "RENAULT 12",
       "youtubeId": "6fjfLD0E5R8",
       "spotify": "https://open.spotify.com/track/1EPYHDGAGaULJhCBxvhCKR",
-      "active": true
+      "active": true,
+      "youtubeMusic": "https://music.youtube.com/watch?v=ujlV23zjBdI",
+      "appleMusic": "https://music.apple.com/ar/album/renault-12-single/1628684856"
     },
     {
       "title": "CABALLO EN RENAULT 19 (HARD MIX)",
       "youtubeId": "i69_GGN1l_4",
       "spotify": "https://open.spotify.com/track/68GTWHsAv6lb90zlUf45qn",
-      "active": true
+      "active": true,
+      "youtubeMusic": "https://music.youtube.com/watch?v=i9XiY6quTZc",
+      "appleMusic": "https://music.apple.com/us/album/caballo-en-renault-19-hard-mix-single/1792595250"
     },
     {
       "title": "VENDO GOL MOD. 1998",
       "youtubeId": "1ssKgrzi8Sk",
       "spotify": "https://open.spotify.com/track/2McHYaGVNXdFtBDTLe9p46",
-      "active": true
+      "active": true,
+      "youtubeMusic": "https://music.youtube.com/watch?v=tbrkobfEj9M",
+      "appleMusic": "https://music.apple.com/ar/album/vendo-gol-mod-1998-single/1704817077",
+      "tidal": "https://tidal.com/album/313384862"
     },
     {
       "title": "MESI (MESSITEK 2026)",
       "youtubeId": "rW0DNrK-vP4",
       "spotify": "https://open.spotify.com/track/7svFM25Fz2ZNjSpaSSoKCn",
-      "active": true
+      "active": true,
+      "youtubeMusic": "https://music.youtube.com/watch?v=GgohhM_eqBY",
+      "amazonMusic": "https://music.amazon.com/tracks/B0HCRBFRGF"
     },
     {
       "title": "KE KALOR",
       "youtubeId": "CVBBLN3fAfw",
       "spotify": "https://open.spotify.com/track/1VtpwPCkOMA8QsD2i5RhrW",
-      "active": true
+      "active": true,
+      "amazonMusic": "https://music.amazon.com/tracks/B0HCR5NVYS"
     },
     {
       "title": "VENDO EL DUNA",
       "youtubeId": "t6Iu7wuUtJQ",
       "spotify": "https://open.spotify.com/track/7jm0pfnzPIlzWq5Ed2SjEw",
-      "active": true
+      "active": true,
+      "appleMusic": "https://music.apple.com/ar/album/vendo-el-duna/6797641892?i=6797641901",
+      "amazonMusic": "https://music.amazon.com/tracks/B0HCR632H9"
     },
     {
       "title": "LA DROGA HACE MAL",
       "youtubeId": "Kw3JPxzJyvA",
       "spotify": "https://open.spotify.com/track/2KGgqTbNODjhABlazFMNlG",
-      "active": true
+      "active": true,
+      "appleMusic": "https://music.apple.com/ar/album/la-droga-hace-mal/6769244547?i=6769244548",
+      "deezer": "https://www.deezer.com/album/979705861"
     }
   ]
 }
